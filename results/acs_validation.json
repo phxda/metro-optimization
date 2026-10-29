@@ -1,0 +1,22 @@
+{
+ "baltimore_lodes": {
+  "n_zones": 242,
+  "acs_overall_transit_share": 0.06376512574583171,
+  "modeled_mode_share_all_trips": 0.07005650177521476,
+  "modeled_mean_origin_share": 0.07360192890795249,
+  "acs_mean_zone_share": 0.06608012045444407,
+  "pearson": 0.4420784722995576,
+  "weighted_pearson": 0.41400816162322357,
+  "spearman": 0.39062337011444315
+ },
+ "triangle_lodes": {
+  "n_zones": 252,
+  "acs_overall_transit_share": 0.013199425450336732,
+  "modeled_mode_share_all_trips": 0.04582432223487731,
+  "modeled_mean_origin_share": 0.04759429789198036,
+  "acs_mean_zone_share": 0.013381891315434663,
+  "pearson": 0.20300682587670982,
+  "weighted_pearson": 0.2794218570349142,
+  "spearman": 0.3196215149008394
+ }
+}
