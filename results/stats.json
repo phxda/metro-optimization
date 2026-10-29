@@ -1,0 +1,2541 @@
+{
+ "q1_table": [
+  {
+   "city": "baltimore",
+   "budget": "high",
+   "pen": "highpen",
+   "n_lines": 3.0,
+   "mean_stations_per_line": 28.389,
+   "n_transfer_stations": 6.333,
+   "transfers_per_line": 2.111,
+   "rings": 3.333,
+   "mode_share": 0.196,
+   "fitness": 40009.51,
+   "water_hops": 0.0,
+   "longest_share": 0.477,
+   "track_km": 168.936,
+   "n_stations": 72.0,
+   "mean_transfers_per_trip": 0.16
+  },
+  {
+   "city": "baltimore",
+   "budget": "high",
+   "pen": "lowpen",
+   "n_lines": 4.667,
+   "mean_stations_per_line": 18.767,
+   "n_transfer_stations": 8.0,
+   "transfers_per_line": 1.733,
+   "rings": 3.667,
+   "mode_share": 0.225,
+   "fitness": 44884.015,
+   "water_hops": 0.0,
+   "longest_share": 0.309,
+   "track_km": 177.775,
+   "n_stations": 74.333,
+   "mean_transfers_per_trip": 0.173
+  },
+  {
+   "city": "baltimore",
+   "budget": "low",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 23.667,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.077,
+   "fitness": 14356.534,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 40.495,
+   "n_stations": 23.667,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "baltimore",
+   "budget": "low",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 23.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.079,
+   "fitness": 15316.794,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 43.036,
+   "n_stations": 23.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "baltimore",
+   "budget": "mid",
+   "pen": "highpen",
+   "n_lines": 2.0,
+   "mean_stations_per_line": 24.333,
+   "n_transfer_stations": 3.333,
+   "transfers_per_line": 1.667,
+   "rings": 0.667,
+   "mode_share": 0.146,
+   "fitness": 27586.856,
+   "water_hops": 0.0,
+   "longest_share": 0.576,
+   "track_km": 85.051,
+   "n_stations": 45.333,
+   "mean_transfers_per_trip": 0.008
+  },
+  {
+   "city": "baltimore",
+   "budget": "mid",
+   "pen": "lowpen",
+   "n_lines": 3.333,
+   "mean_stations_per_line": 14.5,
+   "n_transfer_stations": 3.333,
+   "transfers_per_line": 1.028,
+   "rings": 1.0,
+   "mode_share": 0.129,
+   "fitness": 25645.953,
+   "water_hops": 0.0,
+   "longest_share": 0.529,
+   "track_km": 87.158,
+   "n_stations": 43.333,
+   "mean_transfers_per_trip": 0.019
+  },
+  {
+   "city": "coastal",
+   "budget": "high",
+   "pen": "highpen",
+   "n_lines": 2.0,
+   "mean_stations_per_line": 30.0,
+   "n_transfer_stations": 10.0,
+   "transfers_per_line": 5.0,
+   "rings": 5.0,
+   "mode_share": 0.361,
+   "fitness": 51058.547,
+   "water_hops": 0.0,
+   "longest_share": 0.526,
+   "track_km": 113.676,
+   "n_stations": 50.0,
+   "mean_transfers_per_trip": 0.123
+  },
+  {
+   "city": "coastal",
+   "budget": "high",
+   "pen": "lowpen",
+   "n_lines": 3.667,
+   "mean_stations_per_line": 18.167,
+   "n_transfer_stations": 9.0,
+   "transfers_per_line": 2.472,
+   "rings": 6.667,
+   "mode_share": 0.393,
+   "fitness": 55945.261,
+   "water_hops": 0.0,
+   "longest_share": 0.334,
+   "track_km": 128.773,
+   "n_stations": 56.0,
+   "mean_transfers_per_trip": 0.155
+  },
+  {
+   "city": "coastal",
+   "budget": "low",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 17.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.183,
+   "fitness": 27090.572,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 33.595,
+   "n_stations": 17.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "coastal",
+   "budget": "low",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 17.333,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.184,
+   "fitness": 27231.628,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 33.294,
+   "n_stations": 17.333,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "coastal",
+   "budget": "mid",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 31.667,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.279,
+   "fitness": 39014.788,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 56.761,
+   "n_stations": 31.667,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "coastal",
+   "budget": "mid",
+   "pen": "lowpen",
+   "n_lines": 2.0,
+   "mean_stations_per_line": 18.5,
+   "n_transfer_stations": 3.667,
+   "transfers_per_line": 1.833,
+   "rings": 1.0,
+   "mode_share": 0.305,
+   "fitness": 43071.251,
+   "water_hops": 0.0,
+   "longest_share": 0.65,
+   "track_km": 67.43,
+   "n_stations": 33.333,
+   "mean_transfers_per_trip": 0.038
+  },
+  {
+   "city": "mono",
+   "budget": "high",
+   "pen": "highpen",
+   "n_lines": 3.0,
+   "mean_stations_per_line": 23.778,
+   "n_transfer_stations": 5.667,
+   "transfers_per_line": 1.889,
+   "rings": 2.667,
+   "mode_share": 0.166,
+   "fitness": 10868.314,
+   "water_hops": 0.0,
+   "longest_share": 0.422,
+   "track_km": 123.836,
+   "n_stations": 63.667,
+   "mean_transfers_per_trip": 0.098
+  },
+  {
+   "city": "mono",
+   "budget": "high",
+   "pen": "lowpen",
+   "n_lines": 3.667,
+   "mean_stations_per_line": 20.111,
+   "n_transfer_stations": 8.0,
+   "transfers_per_line": 2.194,
+   "rings": 6.667,
+   "mode_share": 0.191,
+   "fitness": 11124.084,
+   "water_hops": 0.0,
+   "longest_share": 0.392,
+   "track_km": 131.087,
+   "n_stations": 62.333,
+   "mean_transfers_per_trip": 0.137
+  },
+  {
+   "city": "mono",
+   "budget": "low",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 22.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.061,
+   "fitness": 3757.799,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 29.709,
+   "n_stations": 22.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "mono",
+   "budget": "low",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 21.333,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.057,
+   "fitness": 3538.404,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 30.498,
+   "n_stations": 21.333,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "mono",
+   "budget": "mid",
+   "pen": "highpen",
+   "n_lines": 1.333,
+   "mean_stations_per_line": 34.0,
+   "n_transfer_stations": 0.333,
+   "transfers_per_line": 0.167,
+   "rings": 0.0,
+   "mode_share": 0.105,
+   "fitness": 6878.177,
+   "water_hops": 0.0,
+   "longest_share": 0.834,
+   "track_km": 63.661,
+   "n_stations": 40.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "mono",
+   "budget": "mid",
+   "pen": "lowpen",
+   "n_lines": 2.0,
+   "mean_stations_per_line": 20.0,
+   "n_transfer_stations": 1.667,
+   "transfers_per_line": 0.833,
+   "rings": 0.0,
+   "mode_share": 0.11,
+   "fitness": 6828.862,
+   "water_hops": 0.0,
+   "longest_share": 0.523,
+   "track_km": 62.998,
+   "n_stations": 38.333,
+   "mean_transfers_per_trip": 0.035
+  },
+  {
+   "city": "poly",
+   "budget": "high",
+   "pen": "highpen",
+   "n_lines": 1.667,
+   "mean_stations_per_line": 45.667,
+   "n_transfer_stations": 6.333,
+   "transfers_per_line": 3.167,
+   "rings": 3.667,
+   "mode_share": 0.147,
+   "fitness": 15150.306,
+   "water_hops": 0.0,
+   "longest_share": 0.762,
+   "track_km": 137.99,
+   "n_stations": 62.667,
+   "mean_transfers_per_trip": 0.096
+  },
+  {
+   "city": "poly",
+   "budget": "high",
+   "pen": "lowpen",
+   "n_lines": 3.667,
+   "mean_stations_per_line": 18.917,
+   "n_transfer_stations": 6.667,
+   "transfers_per_line": 1.889,
+   "rings": 4.667,
+   "mode_share": 0.171,
+   "fitness": 16782.804,
+   "water_hops": 0.0,
+   "longest_share": 0.445,
+   "track_km": 139.631,
+   "n_stations": 60.0,
+   "mean_transfers_per_trip": 0.055
+  },
+  {
+   "city": "poly",
+   "budget": "low",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 18.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.044,
+   "fitness": 4549.353,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 32.894,
+   "n_stations": 18.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "poly",
+   "budget": "low",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 18.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.045,
+   "fitness": 4759.565,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 33.045,
+   "n_stations": 18.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "poly",
+   "budget": "mid",
+   "pen": "highpen",
+   "n_lines": 1.333,
+   "mean_stations_per_line": 30.333,
+   "n_transfer_stations": 2.0,
+   "transfers_per_line": 1.0,
+   "rings": 0.333,
+   "mode_share": 0.097,
+   "fitness": 10267.798,
+   "water_hops": 0.0,
+   "longest_share": 0.902,
+   "track_km": 67.009,
+   "n_stations": 34.667,
+   "mean_transfers_per_trip": 0.001
+  },
+  {
+   "city": "poly",
+   "budget": "mid",
+   "pen": "lowpen",
+   "n_lines": 1.667,
+   "mean_stations_per_line": 23.0,
+   "n_transfer_stations": 1.0,
+   "transfers_per_line": 0.5,
+   "rings": 0.333,
+   "mode_share": 0.097,
+   "fitness": 9996.484,
+   "water_hops": 0.0,
+   "longest_share": 0.809,
+   "track_km": 66.947,
+   "n_stations": 34.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "river",
+   "budget": "high",
+   "pen": "highpen",
+   "n_lines": 2.0,
+   "mean_stations_per_line": 33.0,
+   "n_transfer_stations": 5.0,
+   "transfers_per_line": 2.5,
+   "rings": 2.667,
+   "mode_share": 0.184,
+   "fitness": 19459.887,
+   "water_hops": 5.0,
+   "longest_share": 0.58,
+   "track_km": 127.234,
+   "n_stations": 61.0,
+   "mean_transfers_per_trip": 0.116
+  },
+  {
+   "city": "river",
+   "budget": "high",
+   "pen": "lowpen",
+   "n_lines": 4.333,
+   "mean_stations_per_line": 15.917,
+   "n_transfer_stations": 6.0,
+   "transfers_per_line": 1.417,
+   "rings": 3.667,
+   "mode_share": 0.215,
+   "fitness": 21939.845,
+   "water_hops": 4.667,
+   "longest_share": 0.351,
+   "track_km": 129.078,
+   "n_stations": 59.0,
+   "mean_transfers_per_trip": 0.15
+  },
+  {
+   "city": "river",
+   "budget": "low",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 18.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.071,
+   "fitness": 7047.747,
+   "water_hops": 1.333,
+   "longest_share": 1.0,
+   "track_km": 30.636,
+   "n_stations": 18.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "river",
+   "budget": "low",
+   "pen": "lowpen",
+   "n_lines": 1.333,
+   "mean_stations_per_line": 14.5,
+   "n_transfer_stations": 0.333,
+   "transfers_per_line": 0.167,
+   "rings": 0.0,
+   "mode_share": 0.064,
+   "fitness": 6472.313,
+   "water_hops": 1.333,
+   "longest_share": 0.923,
+   "track_km": 30.849,
+   "n_stations": 17.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "river",
+   "budget": "mid",
+   "pen": "highpen",
+   "n_lines": 1.667,
+   "mean_stations_per_line": 23.833,
+   "n_transfer_stations": 1.667,
+   "transfers_per_line": 0.833,
+   "rings": 0.333,
+   "mode_share": 0.115,
+   "fitness": 11834.362,
+   "water_hops": 2.333,
+   "longest_share": 0.75,
+   "track_km": 62.855,
+   "n_stations": 34.0,
+   "mean_transfers_per_trip": 0.005
+  },
+  {
+   "city": "river",
+   "budget": "mid",
+   "pen": "lowpen",
+   "n_lines": 3.0,
+   "mean_stations_per_line": 12.028,
+   "n_transfer_stations": 3.0,
+   "transfers_per_line": 1.083,
+   "rings": 1.333,
+   "mode_share": 0.12,
+   "fitness": 12377.805,
+   "water_hops": 3.0,
+   "longest_share": 0.482,
+   "track_km": 63.206,
+   "n_stations": 30.0,
+   "mean_transfers_per_trip": 0.062
+  },
+  {
+   "city": "triangle",
+   "budget": "high",
+   "pen": "highpen",
+   "n_lines": 1.333,
+   "mean_stations_per_line": 11.167,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.098,
+   "fitness": 17787.356,
+   "water_hops": 0.0,
+   "longest_share": 0.841,
+   "track_km": 75.12,
+   "n_stations": 14.333,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "triangle",
+   "budget": "high",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 12.333,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.091,
+   "fitness": 16513.597,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 61.101,
+   "n_stations": 12.333,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "triangle",
+   "budget": "low",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 4.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.031,
+   "fitness": 4714.742,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 26.922,
+   "n_stations": 4.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "triangle",
+   "budget": "low",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 4.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.031,
+   "fitness": 4681.932,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 26.901,
+   "n_stations": 4.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "triangle",
+   "budget": "mid",
+   "pen": "highpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 10.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.075,
+   "fitness": 12538.562,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 51.876,
+   "n_stations": 10.0,
+   "mean_transfers_per_trip": 0.0
+  },
+  {
+   "city": "triangle",
+   "budget": "mid",
+   "pen": "lowpen",
+   "n_lines": 1.0,
+   "mean_stations_per_line": 10.0,
+   "n_transfer_stations": 0.0,
+   "transfers_per_line": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.075,
+   "fitness": 12465.567,
+   "water_hops": 0.0,
+   "longest_share": 1.0,
+   "track_km": 50.192,
+   "n_stations": 10.0,
+   "mean_transfers_per_trip": 0.0
+  }
+ ],
+ "P1a_line_ratio_high_over_low": {
+  "mono|lowpen": 3.6666666666666665,
+  "mono|highpen": 3.0,
+  "coastal|lowpen": 3.6666666666666665,
+  "coastal|highpen": 2.0,
+  "river|lowpen": 3.25,
+  "river|highpen": 2.0,
+  "poly|lowpen": 3.6666666666666665,
+  "poly|highpen": 1.6666666666666667,
+  "baltimore|lowpen": 4.666666666666667,
+  "baltimore|highpen": 3.0,
+  "triangle|lowpen": 1.0,
+  "triangle|highpen": 1.3333333333333333
+ },
+ "P1b_rings_mono": {
+  "low": {
+   "highpen": [
+    0,
+    0,
+    0
+   ],
+   "lowpen": [
+    0,
+    0,
+    0
+   ]
+  },
+  "mid": {
+   "highpen": [
+    0,
+    0,
+    0
+   ],
+   "lowpen": [
+    0,
+    0,
+    0
+   ]
+  },
+  "high": {
+   "highpen": [
+    2,
+    0,
+    6
+   ],
+   "lowpen": [
+    5,
+    6,
+    9
+   ]
+  }
+ },
+ "P1c_coastal": {
+  "low": {
+   "angle": [
+    174.3,
+    175.6,
+    175.4,
+    175.0,
+    175.6,
+    175.3
+   ],
+   "rings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "mid": {
+   "angle": [
+    178.7,
+    178.8,
+    178.8,
+    1.1,
+    176.7,
+    176.1
+   ],
+   "rings": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+   ]
+  },
+  "high": {
+   "angle": [
+    1.5,
+    175.8,
+    176.8,
+    179.9,
+    176.1,
+    178.0
+   ],
+   "rings": [
+    3,
+    5,
+    7,
+    6,
+    6,
+    8
+   ]
+  }
+ },
+ "P1d_river_water_hops": {
+  "low": {
+   "highpen": [
+    2,
+    1,
+    1
+   ],
+   "lowpen": [
+    2,
+    1,
+    1
+   ]
+  },
+  "mid": {
+   "highpen": [
+    3,
+    2,
+    2
+   ],
+   "lowpen": [
+    3,
+    3,
+    3
+   ]
+  },
+  "high": {
+   "highpen": [
+    5,
+    5,
+    5
+   ],
+   "lowpen": [
+    5,
+    5,
+    4
+   ]
+  }
+ },
+ "P1e_transfers_per_line_syn": {
+  "low": {
+   "coastal": 0.0,
+   "mono": 0.0,
+   "poly": 0.0,
+   "river": 0.083
+  },
+  "mid": {
+   "coastal": 0.917,
+   "mono": 0.5,
+   "poly": 0.75,
+   "river": 0.958
+  },
+  "high": {
+   "coastal": 3.736,
+   "mono": 2.042,
+   "poly": 2.528,
+   "river": 1.958
+  }
+ },
+ "P1f_mode_share": [
+  {
+   "city": "baltimore",
+   "low": 0.0784,
+   "mid": 0.1378,
+   "high": 0.2103,
+   "gain_low_mid": 0.0593,
+   "gain_mid_high": 0.0725
+  },
+  {
+   "city": "coastal",
+   "low": 0.1832,
+   "mid": 0.2922,
+   "high": 0.3771,
+   "gain_low_mid": 0.109,
+   "gain_mid_high": 0.0848
+  },
+  {
+   "city": "mono",
+   "low": 0.0593,
+   "mid": 0.1073,
+   "high": 0.1785,
+   "gain_low_mid": 0.048,
+   "gain_mid_high": 0.0711
+  },
+  {
+   "city": "poly",
+   "low": 0.0444,
+   "mid": 0.0974,
+   "high": 0.1592,
+   "gain_low_mid": 0.053,
+   "gain_mid_high": 0.0618
+  },
+  {
+   "city": "river",
+   "low": 0.0675,
+   "mid": 0.1177,
+   "high": 0.1992,
+   "gain_low_mid": 0.0503,
+   "gain_mid_high": 0.0815
+  },
+  {
+   "city": "triangle",
+   "low": 0.0308,
+   "mid": 0.0753,
+   "high": 0.0941,
+   "gain_low_mid": 0.0445,
+   "gain_mid_high": 0.0188
+  }
+ ],
+ "q2_pooled": {
+  "n_lines": {
+   "abs": {
+    "n": 108,
+    "mean": -0.6759259259259259,
+    "median": 0.0,
+    "ci_lo": -0.8425925925925926,
+    "ci_hi": -0.5092592592592593,
+    "dz": -0.7644318837278453,
+    "frac_pos": 0.009259259259259259,
+    "frac_neg": 0.46296296296296297
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.20478395061728397,
+    "median": 0.0,
+    "ci_lo": -0.25448302469135803,
+    "ci_hi": -0.15231095679012338,
+    "dz": -0.7481784161435702,
+    "frac_pos": 0.009259259259259259,
+    "frac_neg": 0.46296296296296297
+   }
+  },
+  "mean_stations_per_line": {
+   "abs": {
+    "n": 108,
+    "mean": 6.99212962962963,
+    "median": 2.0,
+    "ci_lo": 5.1750848765432105,
+    "ci_hi": 8.953912037037039,
+    "dz": 0.7040626859486714,
+    "frac_pos": 0.6296296296296297,
+    "frac_neg": 0.12962962962962962
+   },
+   "rel": {
+    "n": 108,
+    "mean": 0.41997611980767635,
+    "median": 0.13333333333333333,
+    "ci_lo": 0.3089633359818977,
+    "ci_hi": 0.5336654827007697,
+    "dz": 0.7010145167025462,
+    "frac_pos": 0.6296296296296297,
+    "frac_neg": 0.12962962962962962
+   }
+  },
+  "n_transfer_stations": {
+   "abs": {
+    "n": 108,
+    "mean": -0.5925925925925926,
+    "median": 0.0,
+    "ci_lo": -0.9444444444444444,
+    "ci_hi": -0.23148148148148148,
+    "dz": -0.3127811781915725,
+    "frac_pos": 0.14814814814814814,
+    "frac_neg": 0.35185185185185186
+   },
+   "rel": {
+    "n": 108,
+    "mean": 9259259.11861405,
+    "median": 0.0,
+    "ci_lo": -0.24226906966490303,
+    "ci_hi": 27777777.734511588,
+    "dz": 0.09622504338964966,
+    "frac_pos": 0.14814814814814814,
+    "frac_neg": 0.35185185185185186
+   }
+  },
+  "transfers_per_line": {
+   "abs": {
+    "n": 108,
+    "mean": 0.03611111111111112,
+    "median": 0.0,
+    "ci_lo": -0.15726466049382717,
+    "ci_hi": 0.23210262345679017,
+    "dz": 0.03557304248480083,
+    "frac_pos": 0.26851851851851855,
+    "frac_neg": 0.2777777777777778
+   },
+   "rel": {
+    "n": 108,
+    "mean": 4629629.6651644865,
+    "median": 0.0,
+    "ci_lo": -0.08952725418871252,
+    "ci_hi": 13888889.037929462,
+    "dz": 0.09622504561041834,
+    "frac_pos": 0.26851851851851855,
+    "frac_neg": 0.2777777777777778
+   }
+  },
+  "longest_line_km": {
+   "abs": {
+    "n": 108,
+    "mean": 9.052903278874195,
+    "median": 2.1240401525006654,
+    "ci_lo": 6.148238220136009,
+    "ci_hi": 12.096153546649957,
+    "dz": 0.5824390729956076,
+    "frac_pos": 0.6759259259259259,
+    "frac_neg": 0.25925925925925924
+   },
+   "rel": {
+    "n": 108,
+    "mean": 0.20486412602050597,
+    "median": 0.04999296438457807,
+    "ci_lo": 0.14406113700352555,
+    "ci_hi": 0.2692768509091116,
+    "dz": 0.6126502482436194,
+    "frac_pos": 0.6759259259259259,
+    "frac_neg": 0.25925925925925924
+   }
+  },
+  "mean_transfers_per_trip": {
+   "abs": {
+    "n": 108,
+    "mean": -0.010702234921179108,
+    "median": 0.0,
+    "ci_lo": -0.01901432425872333,
+    "ci_hi": -0.00243605257883173,
+    "dz": -0.23941183331486737,
+    "frac_pos": 0.1574074074074074,
+    "frac_neg": 0.39814814814814814
+   },
+   "rel": {
+    "n": 108,
+    "mean": 179904.48877977525,
+    "median": 0.0,
+    "ci_lo": -0.18774853432097324,
+    "ci_hi": 512811.1605618818,
+    "dz": 0.1116102497822482,
+    "frac_pos": 0.1574074074074074,
+    "frac_neg": 0.39814814814814814
+   }
+  },
+  "rings": {
+   "abs": {
+    "n": 108,
+    "mean": -0.46296296296296297,
+    "median": 0.0,
+    "ci_lo": -0.7222222222222222,
+    "ci_hi": -0.21296296296296297,
+    "dz": -0.3413252251245078,
+    "frac_pos": 0.07407407407407407,
+    "frac_neg": 0.32407407407407407
+   },
+   "rel": {
+    "n": 108,
+    "mean": 27777777.594940472,
+    "median": 0.0,
+    "ci_lo": -0.1848914241622575,
+    "ci_hi": 64814814.62214258,
+    "dz": 0.16824647967666848,
+    "frac_pos": 0.07407407407407407,
+    "frac_neg": 0.32407407407407407
+   }
+  },
+  "fitness": {
+   "abs": {
+    "n": 108,
+    "mean": -1141.7975749927677,
+    "median": -407.10502373422923,
+    "ci_lo": -1713.3507662539064,
+    "ci_hi": -579.5051332055806,
+    "dz": -0.38143598722613004,
+    "frac_pos": 0.3888888888888889,
+    "frac_neg": 0.6111111111111112
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.031990236087616815,
+    "median": -0.033176463901229566,
+    "ci_lo": -0.0577236094720979,
+    "ci_hi": -0.0059760590805122285,
+    "dz": -0.2369740737247296,
+    "frac_pos": 0.3888888888888889,
+    "frac_neg": 0.6111111111111112
+   }
+  },
+  "track_km": {
+   "abs": {
+    "n": 108,
+    "mean": -2.4737345224268443,
+    "median": -0.47432515849650514,
+    "ci_lo": -4.151446398737206,
+    "ci_hi": -0.7968075843924077,
+    "dz": -0.27310851940492625,
+    "frac_pos": 0.39814814814814814,
+    "frac_neg": 0.5370370370370371
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.02454367570274525,
+    "median": -0.008562164193820644,
+    "ci_lo": -0.043175472476513516,
+    "ci_hi": -0.0038223628077439587,
+    "dz": -0.23381108533853157,
+    "frac_pos": 0.39814814814814814,
+    "frac_neg": 0.5370370370370371
+   }
+  },
+  "n_stations": {
+   "abs": {
+    "n": 108,
+    "mean": -0.09259259259259259,
+    "median": 0.0,
+    "ci_lo": -0.7592592592592593,
+    "ci_hi": 0.5277777777777778,
+    "dz": -0.02736446481686609,
+    "frac_pos": 0.37037037037037035,
+    "frac_neg": 0.35185185185185186
+   },
+   "rel": {
+    "n": 108,
+    "mean": 0.010366460858880357,
+    "median": 0.0,
+    "ci_lo": -0.007258355295068659,
+    "ci_hi": 0.029893714528584192,
+    "dz": 0.10477072985786857,
+    "frac_pos": 0.37037037037037035,
+    "frac_neg": 0.35185185185185186
+   }
+  },
+  "km_per_line": {
+   "abs": {
+    "n": 108,
+    "mean": 12.394149141679119,
+    "median": 2.330388280213132,
+    "ci_lo": 8.869235597863257,
+    "ci_hi": 16.199644307590237,
+    "dz": 0.6471995490736211,
+    "frac_pos": 0.6851851851851852,
+    "frac_neg": 0.25
+   },
+   "rel": {
+    "n": 108,
+    "mean": 0.3967925229710776,
+    "median": 0.06094399315226142,
+    "ci_lo": 0.2878145124390767,
+    "ci_hi": 0.5121852394855573,
+    "dz": 0.6703428592876401,
+    "frac_pos": 0.6851851851851852,
+    "frac_neg": 0.25
+   }
+  }
+ },
+ "q2_seed_consistency": {
+  "n_lines": [
+   0.0,
+   0.3055555555555556
+  ],
+  "mean_stations_per_line": [
+   0.4166666666666667,
+   0.0
+  ],
+  "n_transfer_stations": [
+   0.0,
+   0.1111111111111111
+  ],
+  "km_per_line": [
+   0.3611111111111111,
+   0.0
+  ]
+ },
+ "P2b_mid_lines_by_city": {
+  "mono": {
+   "low": 2.0,
+   "high": 1.3333333333333333
+  },
+  "coastal": {
+   "low": 2.0,
+   "high": 1.0
+  },
+  "river": {
+   "low": 3.0,
+   "high": 1.6666666666666667
+  },
+  "poly": {
+   "low": 1.6666666666666667,
+   "high": 1.3333333333333333
+  },
+  "baltimore": {
+   "low": 3.3333333333333335,
+   "high": 2.0
+  },
+  "triangle": {
+   "low": 1.0,
+   "high": 1.0
+  }
+ },
+ "q2_cross": {
+  "ratio_hiopt_over_loopt_under_hi": 1.0180100794102054,
+  "ratio_hi_fit_over_lo_fit": 0.9668235360987705,
+  "frac_hi_lower": 0.6111111111111112,
+  "regret_lo_net_under_hi_rel": {
+   "n": 108,
+   "mean": -0.033732444557287945,
+   "median": -0.01769120358171212,
+   "ci_lo": -0.06483821660250157,
+   "ci_hi": -0.0017877836588121132,
+   "dz": -0.20319635986937165,
+   "frac_pos": 0.37037037037037035,
+   "frac_neg": 0.5648148148148148
+  }
+ },
+ "q3_gap_by_condition": [
+  {
+   "city": "baltimore",
+   "budget": "high",
+   "pen": "highpen",
+   "mean": 0.0619,
+   "min": -0.0845,
+   "max": 0.2387
+  },
+  {
+   "city": "baltimore",
+   "budget": "high",
+   "pen": "lowpen",
+   "mean": 0.0339,
+   "min": -0.0177,
+   "max": 0.0671
+  },
+  {
+   "city": "baltimore",
+   "budget": "low",
+   "pen": "highpen",
+   "mean": 0.0722,
+   "min": 0.0375,
+   "max": 0.1161
+  },
+  {
+   "city": "baltimore",
+   "budget": "low",
+   "pen": "lowpen",
+   "mean": 0.0824,
+   "min": 0.0328,
+   "max": 0.12
+  },
+  {
+   "city": "baltimore",
+   "budget": "mid",
+   "pen": "highpen",
+   "mean": 0.0648,
+   "min": -0.09,
+   "max": 0.3349
+  },
+  {
+   "city": "baltimore",
+   "budget": "mid",
+   "pen": "lowpen",
+   "mean": 0.0315,
+   "min": -0.2521,
+   "max": 0.2508
+  },
+  {
+   "city": "coastal",
+   "budget": "high",
+   "pen": "highpen",
+   "mean": 0.0403,
+   "min": -0.0037,
+   "max": 0.0828
+  },
+  {
+   "city": "coastal",
+   "budget": "high",
+   "pen": "lowpen",
+   "mean": 0.0414,
+   "min": 0.0022,
+   "max": 0.0759
+  },
+  {
+   "city": "coastal",
+   "budget": "low",
+   "pen": "highpen",
+   "mean": 0.2355,
+   "min": 0.1043,
+   "max": 0.4549
+  },
+  {
+   "city": "coastal",
+   "budget": "low",
+   "pen": "lowpen",
+   "mean": 0.1762,
+   "min": 0.0711,
+   "max": 0.2567
+  },
+  {
+   "city": "coastal",
+   "budget": "mid",
+   "pen": "highpen",
+   "mean": 0.0546,
+   "min": 0.012,
+   "max": 0.0763
+  },
+  {
+   "city": "coastal",
+   "budget": "mid",
+   "pen": "lowpen",
+   "mean": 0.0405,
+   "min": -0.0085,
+   "max": 0.0752
+  },
+  {
+   "city": "mono",
+   "budget": "high",
+   "pen": "highpen",
+   "mean": 0.06,
+   "min": 0.0085,
+   "max": 0.1181
+  },
+  {
+   "city": "mono",
+   "budget": "high",
+   "pen": "lowpen",
+   "mean": 0.0202,
+   "min": -0.0268,
+   "max": 0.0624
+  },
+  {
+   "city": "mono",
+   "budget": "low",
+   "pen": "highpen",
+   "mean": 0.125,
+   "min": 0.0627,
+   "max": 0.2378
+  },
+  {
+   "city": "mono",
+   "budget": "low",
+   "pen": "lowpen",
+   "mean": 0.0565,
+   "min": -0.0113,
+   "max": 0.1344
+  },
+  {
+   "city": "mono",
+   "budget": "mid",
+   "pen": "highpen",
+   "mean": 0.0888,
+   "min": -0.0256,
+   "max": 0.2844
+  },
+  {
+   "city": "mono",
+   "budget": "mid",
+   "pen": "lowpen",
+   "mean": 0.0481,
+   "min": -0.0784,
+   "max": 0.1577
+  },
+  {
+   "city": "poly",
+   "budget": "high",
+   "pen": "highpen",
+   "mean": -0.0093,
+   "min": -0.1877,
+   "max": 0.1833
+  },
+  {
+   "city": "poly",
+   "budget": "high",
+   "pen": "lowpen",
+   "mean": 0.0028,
+   "min": -0.192,
+   "max": 0.135
+  },
+  {
+   "city": "poly",
+   "budget": "low",
+   "pen": "highpen",
+   "mean": 0.1299,
+   "min": 0.0195,
+   "max": 0.3058
+  },
+  {
+   "city": "poly",
+   "budget": "low",
+   "pen": "lowpen",
+   "mean": 0.2717,
+   "min": 0.1533,
+   "max": 0.347
+  },
+  {
+   "city": "poly",
+   "budget": "mid",
+   "pen": "highpen",
+   "mean": 0.1213,
+   "min": 0.0011,
+   "max": 0.3425
+  },
+  {
+   "city": "poly",
+   "budget": "mid",
+   "pen": "lowpen",
+   "mean": 0.1454,
+   "min": 0.0111,
+   "max": 0.2898
+  },
+  {
+   "city": "river",
+   "budget": "high",
+   "pen": "highpen",
+   "mean": 0.1299,
+   "min": 0.0588,
+   "max": 0.2005
+  },
+  {
+   "city": "river",
+   "budget": "high",
+   "pen": "lowpen",
+   "mean": 0.0429,
+   "min": -0.0044,
+   "max": 0.1347
+  },
+  {
+   "city": "river",
+   "budget": "low",
+   "pen": "highpen",
+   "mean": 0.1272,
+   "min": 0.0691,
+   "max": 0.2347
+  },
+  {
+   "city": "river",
+   "budget": "low",
+   "pen": "lowpen",
+   "mean": 0.0156,
+   "min": -0.0599,
+   "max": 0.0636
+  },
+  {
+   "city": "river",
+   "budget": "mid",
+   "pen": "highpen",
+   "mean": 0.19,
+   "min": 0.1348,
+   "max": 0.2525
+  },
+  {
+   "city": "river",
+   "budget": "mid",
+   "pen": "lowpen",
+   "mean": 0.0746,
+   "min": -0.0681,
+   "max": 0.1538
+  },
+  {
+   "city": "triangle",
+   "budget": "high",
+   "pen": "highpen",
+   "mean": 0.1494,
+   "min": 0.0394,
+   "max": 0.2058
+  },
+  {
+   "city": "triangle",
+   "budget": "high",
+   "pen": "lowpen",
+   "mean": 0.0362,
+   "min": 0.0139,
+   "max": 0.058
+  },
+  {
+   "city": "triangle",
+   "budget": "low",
+   "pen": "highpen",
+   "mean": 0.3626,
+   "min": 0.3586,
+   "max": 0.3702
+  },
+  {
+   "city": "triangle",
+   "budget": "low",
+   "pen": "lowpen",
+   "mean": 0.2401,
+   "min": 0.0033,
+   "max": 0.3586
+  },
+  {
+   "city": "triangle",
+   "budget": "mid",
+   "pen": "highpen",
+   "mean": 0.0928,
+   "min": 0.0586,
+   "max": 0.11
+  },
+  {
+   "city": "triangle",
+   "budget": "mid",
+   "pen": "lowpen",
+   "mean": 0.0874,
+   "min": 0.0483,
+   "max": 0.11
+  }
+ ],
+ "q3_gap_summary": {
+  "median_cond_gap": 0.0733947770010436,
+  "mean_gap": 0.09846137029599317,
+  "worst_cond_gap": 0.36258166771137806,
+  "worst_run_gap": 0.4549315154043182,
+  "frac_runs_phased_worse": 0.8333333333333334,
+  "ci": [
+   0.07455012962474653,
+   0.12312621332427404
+  ],
+  "frac_conditions_phased_worse_all_seeds": 0.5833333333333334
+ },
+ "q3_gap_by_budget": {
+  "mean": {
+   "high": 0.0508,
+   "low": 0.1579,
+   "mid": 0.0867
+  },
+  "median": {
+   "high": 0.0492,
+   "low": 0.1102,
+   "mid": 0.0759
+  }
+ },
+ "q3_gap_by_city": {
+  "mean": {
+   "baltimore": 0.0578,
+   "coastal": 0.0981,
+   "mono": 0.0664,
+   "poly": 0.1103,
+   "river": 0.0967,
+   "triangle": 0.1614
+  },
+  "median": {
+   "baltimore": 0.0576,
+   "coastal": 0.0754,
+   "mono": 0.0579,
+   "poly": 0.1002,
+   "river": 0.1041,
+   "triangle": 0.11
+  }
+ },
+ "q3_gap_by_city_budget": {
+  "high": {
+   "baltimore": 0.0479,
+   "coastal": 0.0408,
+   "mono": 0.0401,
+   "poly": -0.0033,
+   "river": 0.0864,
+   "triangle": 0.0928
+  },
+  "low": {
+   "baltimore": 0.0773,
+   "coastal": 0.2059,
+   "mono": 0.0908,
+   "poly": 0.2008,
+   "river": 0.0714,
+   "triangle": 0.3014
+  },
+  "mid": {
+   "baltimore": 0.0482,
+   "coastal": 0.0475,
+   "mono": 0.0685,
+   "poly": 0.1334,
+   "river": 0.1323,
+   "triangle": 0.0901
+  }
+ },
+ "q3_structure": {
+  "n_lines": {
+   "abs": {
+    "n": 108,
+    "mean": 0.046296296296296294,
+    "median": 0.0,
+    "ci_lo": -0.09282407407407399,
+    "ci_hi": 0.18518518518518517,
+    "dz": 0.061432588264589374,
+    "frac_pos": 0.17592592592592593,
+    "frac_neg": 0.16666666666666666
+   },
+   "rel": {
+    "n": 108,
+    "mean": 0.1396604938271605,
+    "median": 0.0,
+    "ci_lo": 0.03842206790123457,
+    "ci_hi": 0.246454475308642,
+    "dz": 0.2491044692332928,
+    "frac_pos": 0.17592592592592593,
+    "frac_neg": 0.16666666666666666
+   }
+  },
+  "mean_stations_per_line": {
+   "abs": {
+    "n": 108,
+    "mean": -0.4807098765432099,
+    "median": -1.0,
+    "ci_lo": -1.9993557098765435,
+    "ci_hi": 1.0429050925925927,
+    "dz": -0.06116715245070589,
+    "frac_pos": 0.2777777777777778,
+    "frac_neg": 0.5462962962962963
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.006448914023053863,
+    "median": -0.04819976771196283,
+    "ci_lo": -0.06605604626639837,
+    "ci_hi": 0.05761694416912798,
+    "dz": -0.019832330744572076,
+    "frac_pos": 0.2777777777777778,
+    "frac_neg": 0.5462962962962963
+   }
+  },
+  "longest_share": {
+   "abs": {
+    "n": 108,
+    "mean": 0.0026683428101195623,
+    "median": 0.0,
+    "ci_lo": -0.026603953019843557,
+    "ci_hi": 0.031912980625866984,
+    "dz": 0.017095515047547992,
+    "frac_pos": 0.2962962962962963,
+    "frac_neg": 0.3148148148148148
+   },
+   "rel": {
+    "n": 108,
+    "mean": 0.04422100474702823,
+    "median": 0.0,
+    "ci_lo": -0.0028125957055329907,
+    "ci_hi": 0.09237794899329911,
+    "dz": 0.1758039926180467,
+    "frac_pos": 0.2962962962962963,
+    "frac_neg": 0.3148148148148148
+   }
+  },
+  "rings": {
+   "abs": {
+    "n": 108,
+    "mean": -0.5925925925925926,
+    "median": 0.0,
+    "ci_lo": -0.9629629629629629,
+    "ci_hi": -0.25,
+    "dz": -0.3127811781915725,
+    "frac_pos": 0.07407407407407407,
+    "frac_neg": 0.26851851851851855
+   },
+   "rel": {
+    "n": 108,
+    "mean": 55555555.444826566,
+    "median": 0.0,
+    "ci_lo": -0.1088861331569665,
+    "ci_hi": 148148147.95432612,
+    "dz": 0.13672315622266962,
+    "frac_pos": 0.07407407407407407,
+    "frac_neg": 0.26851851851851855
+   }
+  },
+  "n_transfer_stations": {
+   "abs": {
+    "n": 108,
+    "mean": -0.7222222222222222,
+    "median": 0.0,
+    "ci_lo": -1.2407407407407407,
+    "ci_hi": -0.23148148148148148,
+    "dz": -0.2717675525888523,
+    "frac_pos": 0.2037037037037037,
+    "frac_neg": 0.3148148148148148
+   },
+   "rel": {
+    "n": 108,
+    "mean": 249999999.89661425,
+    "median": 0.0,
+    "ci_lo": 101851851.75683063,
+    "ci_hi": 444444444.270317,
+    "dz": 0.27221264284713,
+    "frac_pos": 0.2037037037037037,
+    "frac_neg": 0.3148148148148148
+   }
+  },
+  "transfers_per_line": {
+   "abs": {
+    "n": 108,
+    "mean": -0.25740740740740736,
+    "median": 0.0,
+    "ci_lo": -0.4873611111111111,
+    "ci_hi": -0.04580246913580237,
+    "dz": -0.21776173798060153,
+    "frac_pos": 0.23148148148148148,
+    "frac_neg": 0.3055555555555556
+   },
+   "rel": {
+    "n": 108,
+    "mean": 106481481.40116304,
+    "median": 0.0,
+    "ci_lo": 41666666.6046542,
+    "ci_hi": 197530864.07801655,
+    "dz": 0.24821020334450414,
+    "frac_pos": 0.23148148148148148,
+    "frac_neg": 0.3055555555555556
+   }
+  },
+  "mode_share": {
+   "abs": {
+    "n": 108,
+    "mean": -0.013489609421777841,
+    "median": -0.012327827406238154,
+    "ci_lo": -0.016406509614819636,
+    "ci_hi": -0.010681134021907963,
+    "dz": -0.8885689706995744,
+    "frac_pos": 0.12962962962962962,
+    "frac_neg": 0.8703703703703703
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.12351366473888428,
+    "median": -0.10764190364971357,
+    "ci_lo": -0.14923371159552154,
+    "ci_hi": -0.0992277909570808,
+    "dz": -0.9457218435862862,
+    "frac_pos": 0.12962962962962962,
+    "frac_neg": 0.8703703703703703
+   }
+  },
+  "track_km": {
+   "abs": {
+    "n": 108,
+    "mean": -3.3513105513069226,
+    "median": -0.4653072006159711,
+    "ci_lo": -5.655994413461921,
+    "ci_hi": -1.2072547981400592,
+    "dz": -0.28336040964589315,
+    "frac_pos": 0.4166666666666667,
+    "frac_neg": 0.5833333333333334
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.019937879616027374,
+    "median": -0.01091533052125862,
+    "ci_lo": -0.04236962477509444,
+    "ci_hi": 0.002149389405008003,
+    "dz": -0.16784376606030382,
+    "frac_pos": 0.4166666666666667,
+    "frac_neg": 0.5833333333333334
+   }
+  },
+  "budget_used_frac": {
+   "abs": {
+    "n": 108,
+    "mean": -0.025128692445815812,
+    "median": -0.004018616343383463,
+    "ci_lo": -0.04342580842266018,
+    "ci_hi": -0.00798184964897921,
+    "dz": -0.26506977963050166,
+    "frac_pos": 0.3611111111111111,
+    "frac_neg": 0.6388888888888888
+   },
+   "rel": {
+    "n": 108,
+    "mean": -0.021836955898142673,
+    "median": -0.00405419736375534,
+    "ci_lo": -0.04269782717923251,
+    "ci_hi": -0.000794524955418546,
+    "dz": -0.19483270494316526,
+    "frac_pos": 0.3611111111111111,
+    "frac_neg": 0.6388888888888888
+   }
+  }
+ },
+ "q3_structure_seed_consistency": {
+  "n_lines": [
+   0.05555555555555555,
+   0.0
+  ],
+  "mean_stations_per_line": [
+   0.1111111111111111,
+   0.2222222222222222
+  ],
+  "longest_share": [
+   0.08333333333333333,
+   0.1111111111111111
+  ],
+  "rings": [
+   0.0,
+   0.08333333333333333
+  ]
+ },
+ "real_eval": {
+  "baltimore": {
+   "Metro SubwayLink|lowpen": {
+    "fitness": 6747.639320328905,
+    "cost": 72.96461113496085,
+    "mode_share": 0.05029197597258011,
+    "transfer_faster": 0.04443377946341026,
+    "n_lines": 1,
+    "n_stations": 14,
+    "track_km": 20.78584445398434
+   },
+   "Metro SubwayLink|highpen": {
+    "fitness": 6747.639320328906,
+    "cost": 72.96461113496085,
+    "mode_share": 0.05029197597258011,
+    "transfer_faster": 0.04443377946341026,
+    "n_lines": 1,
+    "n_stations": 14,
+    "track_km": 20.78584445398434
+   },
+   "Light RailLink|lowpen": {
+    "fitness": 7842.670287823892,
+    "cost": 135.06865926737032,
+    "mode_share": 0.041662005078126334,
+    "transfer_faster": 0.039335485123455784,
+    "n_lines": 1,
+    "n_stations": 17,
+    "track_km": 40.62746370694812
+   },
+   "Light RailLink|highpen": {
+    "fitness": 7842.670287823893,
+    "cost": 135.06865926737032,
+    "mode_share": 0.041662005078126334,
+    "transfer_faster": 0.039335485123455784,
+    "n_lines": 1,
+    "n_stations": 17,
+    "track_km": 40.62746370694812
+   },
+   "Red Line (planned)|lowpen": {
+    "fitness": 6315.265159369033,
+    "cost": 79.76637392541885,
+    "mode_share": 0.04298831983782179,
+    "transfer_faster": 0.03876683460607823,
+    "n_lines": 1,
+    "n_stations": 13,
+    "track_km": 24.106549570167537
+   },
+   "Red Line (planned)|highpen": {
+    "fitness": 6315.265159369035,
+    "cost": 79.76637392541885,
+    "mode_share": 0.042988319837821795,
+    "transfer_faster": 0.03876683460607823,
+    "n_lines": 1,
+    "n_stations": 13,
+    "track_km": 24.106549570167537
+   },
+   "Metro + Light Rail|lowpen": {
+    "fitness": 14685.7791216423,
+    "cost": 206.53327040233117,
+    "mode_share": 0.10145260716372514,
+    "transfer_faster": 0.0910285944033674,
+    "n_lines": 2,
+    "n_stations": 30,
+    "track_km": 61.41330816093246
+   },
+   "Metro + Light Rail|highpen": {
+    "fitness": 13226.079766961591,
+    "cost": 206.53327040233117,
+    "mode_share": 0.09116820779120868,
+    "transfer_faster": 0.0817883942123276,
+    "n_lines": 2,
+    "n_stations": 30,
+    "track_km": 61.41330816093246
+   },
+   "Metro + Light Rail + Red Line|lowpen": {
+    "fitness": 18107.24569175175,
+    "cost": 284.79964432775,
+    "mode_share": 0.14058572426386665,
+    "transfer_faster": 0.12325497511989958,
+    "n_lines": 3,
+    "n_stations": 42,
+    "track_km": 85.51985773109999
+   },
+   "Metro + Light Rail + Red Line|highpen": {
+    "fitness": 16444.258477523672,
+    "cost": 284.79964432775,
+    "mode_share": 0.121923861290924,
+    "transfer_faster": 0.10707462950317366,
+    "n_lines": 3,
+    "n_stations": 42,
+    "track_km": 85.51985773109999
+   }
+  },
+  "triangle": {
+   "Proposed commuter rail|lowpen": {
+    "fitness": 5816.678074160686,
+    "cost": 148.86443244850346,
+    "mode_share": 0.0632072425573876,
+    "transfer_faster": 0.11867167011396784,
+    "n_lines": 1,
+    "n_stations": 9,
+    "track_km": 54.145772979401386
+   },
+   "Proposed commuter rail|highpen": {
+    "fitness": 5816.678074160691,
+    "cost": 148.86443244850346,
+    "mode_share": 0.06320724255738762,
+    "transfer_faster": 0.11867167011396784,
+    "n_lines": 1,
+    "n_stations": 9,
+    "track_km": 54.145772979401386
+   },
+   "S-Line|lowpen": {
+    "fitness": 1214.3420705265307,
+    "cost": 68.63371189736,
+    "mode_share": 0.01499928273167801,
+    "transfer_faster": 0.02743569991173455,
+    "n_lines": 1,
+    "n_stations": 5,
+    "track_km": 24.453484758944
+   },
+   "S-Line|highpen": {
+    "fitness": 1214.342070526532,
+    "cost": 68.63371189736,
+    "mode_share": 0.014999282731678018,
+    "transfer_faster": 0.02743569991173455,
+    "n_lines": 1,
+    "n_stations": 5,
+    "track_km": 24.453484758944
+   },
+   "Proposed + S-Line|lowpen": {
+    "fitness": 3377.3435962421345,
+    "cost": 215.99814434586347,
+    "mode_share": 0.0659524801033387,
+    "transfer_faster": 0.11662785436060351,
+    "n_lines": 2,
+    "n_stations": 13,
+    "track_km": 78.59925773834539
+   },
+   "Proposed + S-Line|highpen": {
+    "fitness": 3635.6465106549654,
+    "cost": 215.99814434586347,
+    "mode_share": 0.06423707231924497,
+    "transfer_faster": 0.11565646698126382,
+    "n_lines": 2,
+    "n_stations": 13,
+    "track_km": 78.59925773834539
+   }
+  }
+ },
+ "landmarks": {
+  "baltimore": {
+   "low|lowpen": {
+    "Downtown": [
+     0.28,
+     0.28,
+     0.82
+    ],
+    "Homewood/JHU": [
+     1.41,
+     3.16,
+     4.12
+    ],
+    "JHH/East Balt": [
+     2.1,
+     0.14,
+     0.14
+    ],
+    "West Balt": [
+     5.15,
+     5.52,
+     0.71
+    ],
+    "Owings Mills": [
+     0.3,
+     9.03,
+     1.22
+    ],
+    "Hunt Valley": [
+     6.0,
+     1.0,
+     5.0
+    ],
+    "BWI": [
+     13.87,
+     13.87,
+     12.5
+    ],
+    "Towson": [
+     1.58,
+     0.71,
+     0.71
+    ]
+   },
+   "low|highpen": {
+    "Downtown": [
+     0.28,
+     0.28,
+     0.28
+    ],
+    "Homewood/JHU": [
+     2.24,
+     5.1,
+     5.1
+    ],
+    "JHH/East Balt": [
+     2.1,
+     0.14,
+     0.14
+    ],
+    "West Balt": [
+     4.3,
+     0.71,
+     1.58
+    ],
+    "Owings Mills": [
+     1.04,
+     10.49,
+     1.04
+    ],
+    "Hunt Valley": [
+     4.12,
+     21.0,
+     14.42
+    ],
+    "BWI": [
+     13.46,
+     6.26,
+     13.54
+    ],
+    "Towson": [
+     0.71,
+     13.51,
+     11.51
+    ]
+   },
+   "mid|lowpen": {
+    "Downtown": [
+     0.28,
+     0.28,
+     0.28
+    ],
+    "Homewood/JHU": [
+     3.16,
+     3.0,
+     4.12
+    ],
+    "JHH/East Balt": [
+     0.14,
+     0.14,
+     1.1
+    ],
+    "West Balt": [
+     2.12,
+     2.55,
+     1.58
+    ],
+    "Owings Mills": [
+     0.3,
+     1.04,
+     1.04
+    ],
+    "Hunt Valley": [
+     1.0,
+     6.0,
+     2.0
+    ],
+    "BWI": [
+     11.54,
+     12.97,
+     9.96
+    ],
+    "Towson": [
+     0.71,
+     1.58,
+     1.58
+    ]
+   },
+   "mid|highpen": {
+    "Downtown": [
+     0.82,
+     0.28,
+     0.28
+    ],
+    "Homewood/JHU": [
+     1.41,
+     3.61,
+     0.0
+    ],
+    "JHH/East Balt": [
+     0.14,
+     0.14,
+     0.14
+    ],
+    "West Balt": [
+     0.71,
+     2.55,
+     2.55
+    ],
+    "Owings Mills": [
+     7.03,
+     0.3,
+     0.3
+    ],
+    "Hunt Valley": [
+     2.24,
+     1.0,
+     13.42
+    ],
+    "BWI": [
+     6.26,
+     9.55,
+     7.43
+    ],
+    "Towson": [
+     0.71,
+     0.71,
+     7.11
+    ]
+   },
+   "high|lowpen": {
+    "Downtown": [
+     0.28,
+     0.28,
+     0.28
+    ],
+    "Homewood/JHU": [
+     3.16,
+     4.47,
+     0.0
+    ],
+    "JHH/East Balt": [
+     0.14,
+     0.91,
+     0.14
+    ],
+    "West Balt": [
+     0.71,
+     0.71,
+     0.71
+    ],
+    "Owings Mills": [
+     1.22,
+     1.04,
+     1.04
+    ],
+    "Hunt Valley": [
+     1.41,
+     1.0,
+     1.41
+    ],
+    "BWI": [
+     6.8,
+     7.43,
+     1.8
+    ],
+    "Towson": [
+     0.71,
+     1.58,
+     0.71
+    ]
+   },
+   "high|highpen": {
+    "Downtown": [
+     0.28,
+     0.28,
+     0.28
+    ],
+    "Homewood/JHU": [
+     1.41,
+     1.0,
+     1.0
+    ],
+    "JHH/East Balt": [
+     0.14,
+     0.14,
+     0.14
+    ],
+    "West Balt": [
+     2.55,
+     1.58,
+     0.71
+    ],
+    "Owings Mills": [
+     1.04,
+     1.22,
+     0.7
+    ],
+    "Hunt Valley": [
+     7.07,
+     2.0,
+     0.0
+    ],
+    "BWI": [
+     10.5,
+     6.26,
+     12.66
+    ],
+    "Towson": [
+     0.71,
+     0.71,
+     0.71
+    ]
+   }
+  },
+  "triangle": {
+   "low|lowpen": {
+    "Raleigh DT": [
+     1.73,
+     1.73,
+     1.63
+    ],
+    "RTP": [
+     0.76,
+     0.76,
+     2.08
+    ],
+    "Durham": [
+     0.87,
+     0.87,
+     16.51
+    ],
+    "Chapel Hill": [
+     12.53,
+     12.53,
+     20.37
+    ],
+    "Wake Forest": [
+     21.94,
+     21.94,
+     23.76
+    ],
+    "Cary": [
+     8.7,
+     8.7,
+     8.22
+    ],
+    "Garner": [
+     10.48,
+     10.48,
+     1.42
+    ]
+   },
+   "low|highpen": {
+    "Raleigh DT": [
+     1.73,
+     1.63,
+     1.63
+    ],
+    "RTP": [
+     0.76,
+     0.76,
+     2.08
+    ],
+    "Durham": [
+     0.87,
+     2.49,
+     16.51
+    ],
+    "Chapel Hill": [
+     12.53,
+     11.33,
+     20.37
+    ],
+    "Wake Forest": [
+     21.94,
+     21.94,
+     23.76
+    ],
+    "Cary": [
+     8.7,
+     8.22,
+     8.22
+    ],
+    "Garner": [
+     10.48,
+     9.07,
+     1.42
+    ]
+   },
+   "mid|lowpen": {
+    "Raleigh DT": [
+     0.79,
+     0.79,
+     1.73
+    ],
+    "RTP": [
+     0.76,
+     1.72,
+     0.76
+    ],
+    "Durham": [
+     1.46,
+     0.87,
+     1.57
+    ],
+    "Chapel Hill": [
+     11.45,
+     12.53,
+     11.45
+    ],
+    "Wake Forest": [
+     22.88,
+     21.92,
+     21.94
+    ],
+    "Cary": [
+     7.66,
+     8.86,
+     8.7
+    ],
+    "Garner": [
+     3.3,
+     3.3,
+     1.42
+    ]
+   },
+   "mid|highpen": {
+    "Raleigh DT": [
+     1.73,
+     1.73,
+     0.79
+    ],
+    "RTP": [
+     0.76,
+     0.76,
+     1.72
+    ],
+    "Durham": [
+     1.57,
+     1.57,
+     1.46
+    ],
+    "Chapel Hill": [
+     11.45,
+     11.45,
+     11.45
+    ],
+    "Wake Forest": [
+     21.94,
+     21.94,
+     21.92
+    ],
+    "Cary": [
+     8.7,
+     8.7,
+     8.86
+    ],
+    "Garner": [
+     1.42,
+     1.42,
+     3.3
+    ]
+   },
+   "high|lowpen": {
+    "Raleigh DT": [
+     0.79,
+     1.73,
+     1.73
+    ],
+    "RTP": [
+     1.72,
+     0.76,
+     2.0
+    ],
+    "Durham": [
+     1.57,
+     0.87,
+     0.87
+    ],
+    "Chapel Hill": [
+     12.65,
+     12.53,
+     0.75
+    ],
+    "Wake Forest": [
+     21.92,
+     21.94,
+     21.09
+    ],
+    "Cary": [
+     8.86,
+     8.7,
+     9.03
+    ],
+    "Garner": [
+     2.18,
+     2.54,
+     1.42
+    ]
+   },
+   "high|highpen": {
+    "Raleigh DT": [
+     0.98,
+     1.73,
+     0.79
+    ],
+    "RTP": [
+     1.82,
+     1.72,
+     0.76
+    ],
+    "Durham": [
+     1.57,
+     0.87,
+     1.46
+    ],
+    "Chapel Hill": [
+     1.81,
+     12.53,
+     0.75
+    ],
+    "Wake Forest": [
+     19.6,
+     22.61,
+     21.51
+    ],
+    "Cary": [
+     7.66,
+     7.84,
+     8.86
+    ],
+    "Garner": [
+     1.42,
+     1.42,
+     2.54
+    ]
+   }
+  }
+ },
+ "q45_evolved_vs_real": {
+  "baltimore|lowpen|low": {
+   "evolved_mean": 15316.794408751151,
+   "evolved_min": 14496.990756787756,
+   "evolved_max": 16749.42066639812,
+   "real": 18107.24569175175,
+   "ratio_mean": 0.8458931120445496,
+   "ratio_min": 0.8006182167943663,
+   "mode_share": 0.07937201502252232,
+   "transit_faster": 0.07879601230842953,
+   "real_mode_share": 0.14058572426386665
+  },
+  "baltimore|lowpen|mid": {
+   "evolved_mean": 25645.95347780034,
+   "evolved_min": 22963.3061667878,
+   "evolved_max": 29353.484292270958,
+   "real": 18107.24569175175,
+   "ratio_mean": 1.4163365270667665,
+   "ratio_min": 1.2681832763360632,
+   "mode_share": 0.129471345954246,
+   "transit_faster": 0.1290128354044917,
+   "real_mode_share": 0.14058572426386665
+  },
+  "baltimore|lowpen|high": {
+   "evolved_mean": 44884.01498220277,
+   "evolved_min": 43817.37822378916,
+   "evolved_max": 45900.89544125058,
+   "real": 18107.24569175175,
+   "ratio_mean": 2.4787875387723064,
+   "ratio_min": 2.4198809122995963,
+   "mode_share": 0.22472304659529696,
+   "transit_faster": 0.2260251974706344,
+   "real_mode_share": 0.14058572426386665
+  },
+  "baltimore|highpen|low": {
+   "evolved_mean": 14356.53376016988,
+   "evolved_min": 13854.770052389604,
+   "evolved_max": 15026.98793966665,
+   "real": 16444.258477523672,
+   "ratio_mean": 0.8730423314491599,
+   "ratio_min": 0.842529328478178,
+   "mode_share": 0.07746050504443315,
+   "transit_faster": 0.07627879713723501,
+   "real_mode_share": 0.121923861290924
+  },
+  "baltimore|highpen|mid": {
+   "evolved_mean": 27586.856351993174,
+   "evolved_min": 25599.370415227208,
+   "evolved_max": 30328.927788253208,
+   "real": 16444.258477523672,
+   "ratio_mean": 1.6775980741058905,
+   "ratio_min": 1.5567360760119964,
+   "mode_share": 0.1460555250335276,
+   "transit_faster": 0.14499728956461563,
+   "real_mode_share": 0.121923861290924
+  },
+  "baltimore|highpen|high": {
+   "evolved_mean": 40009.50953300384,
+   "evolved_min": 37213.52516020586,
+   "evolved_max": 42854.897901504686,
+   "real": 16444.258477523672,
+   "ratio_mean": 2.4330382295857005,
+   "ratio_min": 2.263010230048988,
+   "mode_share": 0.19584305770244623,
+   "transit_faster": 0.19280223441197175,
+   "real_mode_share": 0.121923861290924
+  },
+  "triangle|lowpen|low": {
+   "evolved_mean": 4681.9324073556345,
+   "evolved_min": 3419.371813092931,
+   "evolved_max": 5313.212704486987,
+   "real": 5816.678074160686,
+   "ratio_mean": 0.804915167671749,
+   "ratio_min": 0.5878564654081062,
+   "mode_share": 0.03063328447071083,
+   "transit_faster": 0.0545330206375839,
+   "real_mode_share": 0.0632072425573876
+  },
+  "triangle|lowpen|mid": {
+   "evolved_mean": 12465.566618473405,
+   "evolved_min": 12286.044106259937,
+   "evolved_max": 12597.939822838109,
+   "real": 5816.678074160686,
+   "ratio_mean": 2.1430731526726476,
+   "ratio_min": 2.112209744052707,
+   "mode_share": 0.07536381264303758,
+   "transit_faster": 0.13257494211654303,
+   "real_mode_share": 0.0632072425573876
+  },
+  "triangle|lowpen|high": {
+   "evolved_mean": 16513.59692456528,
+   "evolved_min": 16469.194362966275,
+   "evolved_max": 16553.978471168888,
+   "real": 5816.678074160686,
+   "ratio_mean": 2.8390082301310957,
+   "ratio_min": 2.8313745668901724,
+   "mode_share": 0.09058544093434436,
+   "transit_faster": 0.16016910857007194,
+   "real_mode_share": 0.0632072425573876
+  },
+  "triangle|highpen|low": {
+   "evolved_mean": 4714.741500078107,
+   "evolved_min": 3419.371813092934,
+   "evolved_max": 5411.6399826543975,
+   "real": 5816.678074160691,
+   "ratio_mean": 0.8105556883098457,
+   "ratio_min": 0.5878564654081062,
+   "mode_share": 0.030942262008662597,
+   "transit_faster": 0.055930517058690093,
+   "real_mode_share": 0.06320724255738762
+  },
+  "triangle|highpen|mid": {
+   "evolved_mean": 12538.562337180445,
+   "evolved_min": 12419.807365865103,
+   "evolved_max": 12597.939822838114,
+   "real": 5816.678074160691,
+   "ratio_mean": 2.155622535288697,
+   "ratio_min": 2.1352062478818206,
+   "mode_share": 0.07516576279262271,
+   "transit_faster": 0.13098678897270385,
+   "real_mode_share": 0.06320724255738762
+  },
+  "triangle|highpen|high": {
+   "evolved_mean": 17787.356318033915,
+   "evolved_min": 16529.69374164308,
+   "evolved_max": 20033.500549308574,
+   "real": 5816.678074160691,
+   "ratio_mean": 3.057992223611329,
+   "ratio_min": 2.8417755858060287,
+   "mode_share": 0.09763662569294175,
+   "transit_faster": 0.17676017347409564,
+   "real_mode_share": 0.06320724255738762
+  }
+ },
+ "per_worker_hours_mid": {
+  "baltimore": 0.06106179399476271,
+  "triangle": 0.017807952312104865
+ },
+ "per_budget_unit_mid": {
+  "baltimore": 89.98580167649241,
+  "triangle": 83.66152092935171
+ },
+ "triangle_driving_speed_sensitivity": {
+  "45": {
+   "proposed": 15371.776951932525,
+   "proposed_share": 0.08630625879336745,
+   "evolved": [
+    24381.71834370966,
+    24432.362901240936,
+    24927.1709996145
+   ],
+   "evolved_share": [
+    0.09663765815053345,
+    0.09963411029952417,
+    0.09711016745619652
+   ]
+  },
+  "50": {
+   "proposed": 5816.678074160686,
+   "proposed_share": 0.0632072425573876,
+   "evolved": [
+    12512.715926322167,
+    12286.044106259937,
+    12597.939822838109
+   ],
+   "evolved_share": [
+    0.07479239918546442,
+    0.0767779553490092,
+    0.07452108339463911
+   ]
+  },
+  "55": {
+   "proposed": 919.5386015167622,
+   "proposed_share": 0.04683139211993783,
+   "evolved": [
+    5369.473932802795,
+    5043.930557278975,
+    5241.393090226151
+   ],
+   "evolved_share": [
+    0.05768960884883888,
+    0.05898091946151884,
+    0.056875167074127195
+   ]
+  },
+  "60": {
+   "proposed": -1414.215414277013,
+   "proposed_share": 0.03565805306068029,
+   "evolved": [
+    1297.0013075130596,
+    967.7010410718792,
+    1099.1790939661112
+   ],
+   "evolved_share": [
+    0.04489708096511949,
+    0.045745125247161705,
+    0.043741254878950205
+   ]
+  }
+ }
+}

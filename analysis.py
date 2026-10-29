@@ -234,8 +234,7 @@ def figures(df, real):
         for j, b in enumerate(BUD):
             L, r = get_lines(df, city=c, budget=b, pen="lowpen", mode="planned", seed=0)
             L = [[tuple(s) for s in l] for l in L]
-            render.draw(axs[i, j], cities.get_city(c), L, title=f"{NAMES[c]} | {b} budget ({r.budget_units:.0f}) | {int(r.n_lines)} lines, "
-                        f"{int(r.n_transfer_stations)} xfer, ring {int(r.rings)}", lw=1.8, ms=3)
+            render.draw(axs[i, j], cities.get_city(c), L, title=f"{NAMES[c]}, {b} ({r.budget_units:.0f})\n{int(r.n_lines)} lines, {int(r.n_transfer_stations)} xfer, {int(r.rings)} rings", lw=1.8, ms=3)
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "fig1_shapes_by_budget.png"), dpi=130)
     plt.close(fig)
