@@ -17,6 +17,8 @@ def tasks(suite):
         it = itertools.product(["base"], C, B, P, ["planned", "phased"], range(3, 10), [500])
     elif suite == "sens":
         it = itertools.product([v for v in cities.VARIANTS if v != "base"], C, B, P, ["planned", "phased"], range(2), [500])
+    elif suite == "real":
+        it = itertools.product(["base"], ["baltimore_lodes", "triangle_lodes"], B, P, ["planned", "phased"], range(5), [500])
     elif suite == "long":
         it = itertools.product(["base"], C, B, ["lowpen"], ["planned"], range(3), [1500])
     return [dict(variant=v, city=c, budget=b, pen=p, mode=m, seed=s, gens=g) for v, c, b, p, m, s, g in it]

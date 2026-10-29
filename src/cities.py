@@ -25,7 +25,7 @@ class City:
                  block=2, drive_kmh=28., circuity=1.3, park_base=6., park_max=16., cong=1.2, side_pen=0.,
                  transit_kmh=40., dwell=0.5, walk_kmh=4.8, access_radius_km=1.2,
                  access_w=1.2, wait_w=1.5, gamma_km=8., min_hop_km=0.9, max_hop_km=6.,
-                 max_lines=10, asc=ASC, beta=BETA, fleet_per_unit=FLEET_PER_UNIT, mid_budget=220., real=None, total_workers=200000, desc=""):
+                 max_lines=10, od=None, asc=ASC, beta=BETA, fleet_per_unit=FLEET_PER_UNIT, mid_budget=220., real=None, total_workers=200000, desc=""):
         self.name, self.label, self.R, self.C, self.cell = name, label, R, C, cell_km
         self.water = water.astype(bool)
         self.H = np.where(self.water, 0, H)
@@ -43,9 +43,11 @@ class City:
         self.beta, self.fleet_per_unit = beta, fleet_per_unit
         self.real_xy = real or {}
         self.desc = desc
-        s = total_workers / self.H.sum()
-        self.H = self.H * s
-        self.J = self.J * (total_workers / self.J.sum())
+        self.od = od   # observed commute flows (src_cell, dst_cell, workers) replace the gravity model when given
+        if od is None:
+            s = total_workers / self.H.sum()
+            self.H = self.H * s
+            self.J = self.J * (total_workers / self.J.sum())
         self._seg = {}
         self._prep_zones()
         # demand weight for mutation sampling
@@ -89,10 +91,20 @@ class City:
         d = np.hypot(self.zx[:, None] - self.zx[None], self.zy[:, None] - self.zy[None])
         bk = b * self.cell
         np.fill_diagonal(d, 0.5 * bk)
-        f = np.exp(-d / self.gamma)
-        f *= self.zJ[None, :]
-        np.fill_diagonal(f, 0)  # intrazone trips are walked, excluded
-        flow = self.zH[:, None] * f / f.sum(1, keepdims=True).clip(1e-12)
+        if self.od is None:
+            f = np.exp(-d / self.gamma)
+            f *= self.zJ[None, :]
+            np.fill_diagonal(f, 0)  # intrazone trips are walked, excluded
+            flow = self.zH[:, None] * f / f.sum(1, keepdims=True).clip(1e-12)
+        else:
+            zid = np.full(Rz * Cz, -1)
+            zid[np.flatnonzero(keep)] = np.arange(self.Z)
+            src, dst, cnt = self.od
+            zi = zid[(src // self.C // b) * Cz + (src % self.C) // b]
+            zj = zid[(dst // self.C // b) * Cz + (dst % self.C) // b]
+            ok = (zi >= 0) & (zj >= 0) & (zi != zj)
+            flow = np.zeros((self.Z, self.Z))
+            np.add.at(flow, (zi[ok], zj[ok]), cnt[ok])
         self.flow = 2.0 * flow  # one-way trips per day (2 per worker)
         area = bk * bk
         g = np.sqrt((Hz.ravel()[keep] + Jz.ravel()[keep]) / area)
@@ -280,6 +292,77 @@ def get_city(name):
             c.mid_budget = float(math.ceil(model.net_cost(c, [l for k in BUDGET_NETS[name] for l in rn[k]])))
         _cache[name] = c
     return _cache[name]
+
+
+# ---------------- real-data variants (LEHD LODES 2022 commute flows + TIGER water) ----------------
+import os as _os
+_DATA = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "data")
+
+
+def _load_lodes(name):
+    z = np.load(_os.path.join(_DATA, name + "_lodes.npz"))
+    return z, float(z["lat0"]), float(z["lon0"]), float(z["ax"]), float(z["ay"])
+
+
+def _ll(z, lat, lon):
+    _, la0, lo0, ax, ay = z
+    return ax + (lon - lo0) * 111.32 * math.cos(math.radians(la0)), ay - (lat - la0) * 110.57
+
+
+def make_baltimore_lodes():
+    z, la0, lo0, ax, ay = _load_lodes("baltimore")
+    R, C = int(z["R"][()]), int(z["C"][()])
+    X, Y = _grid(R, C, 1.)
+    q = (blob(X, Y, 10, 23, 3.5, .30) + blob(X, Y, 22, 22.5, 3.0, .30) + blob(X, Y, 17.5, 25, 2.5, .25)
+         + blob(X, Y, 17.5, 17.5, 3.5, .14) + blob(X, Y, 12, 20, 3, .2))
+    q = np.clip(q, 0, .40) + .03
+    zz = (z, la0, lo0, ax, ay)
+    P = lambda pts: [_ll(zz, a, b) for a, b in pts]
+    metro = [(39.4010, -76.7811), (39.3727, -76.7449)]
+    mo, mw = (39.3727, -76.7449), (39.3140, -76.6577)
+    for f in (.2, .4, .6, .8):
+        metro.append((mo[0] + f * (mw[0] - mo[0]), mo[1] + f * (mw[1] - mo[1])))
+    metro += [(39.3140, -76.6577), (39.3076, -76.6446), (39.3064, -76.6359), (39.3041, -76.6232), (39.2915, -76.6247),
+              (39.2897, -76.6141), (39.2886, -76.6065), (39.2965, -76.5935)]
+    lrt = [(39.4911, -76.6595), (39.4795, -76.6600), (39.4609, -76.6500), (39.4380, -76.6200), (39.4209, -76.6187), (39.4050, -76.6300),
+           (39.3500, -76.6580), (39.3430, -76.6500), (39.3370, -76.6440), (39.3053, -76.6176), (39.2995, -76.6163), (39.2915, -76.6247),
+           (39.2849, -76.6209), (39.2625, -76.6264), (39.2490, -76.6220), (39.2127, -76.6145), (39.2058, -76.6502), (39.1982, -76.6690),
+           (39.1805, -76.6685)]
+    red = [(39.3118, -76.7350), (39.3112, -76.7230), (39.2990, -76.6870), (39.2975, -76.6690), (39.2960, -76.6590), (39.2902, -76.6340),
+           (39.2897, -76.6141), (39.2836, -76.6010), (39.2810, -76.5930), (39.2800, -76.5790), (39.2820, -76.5700), (39.2905, -76.5560),
+           (39.2910, -76.5330)]
+    real = {"Metro SubwayLink": [P(metro)], "Light RailLink": [P(lrt)], "Red Line (planned)": [P(red)]}
+    c = City("baltimore_lodes", "Baltimore (LODES 2022 + TIGER water; lines approximate)", R, C, 1., z["water"], z["H"], z["J"], carless=q,
+             drive_kmh=26., max_hop_km=7., mid_budget=None, real=real, od=(z["src"], z["dst"], z["cnt"]),
+             desc="Baltimore with observed LODES commute flows and TIGER water; transit alignments from memory.")
+    c.landmarks = {"Downtown": _ll(zz, 39.2904, -76.6122), "Homewood/JHU": _ll(zz, 39.3299, -76.6205), "JHH/East Balt": _ll(zz, 39.2965, -76.5935),
+                   "West Balt": _ll(zz, 39.2990, -76.6870), "Owings Mills": _ll(zz, 39.4010, -76.7811), "Hunt Valley": _ll(zz, 39.4911, -76.6595),
+                   "BWI": _ll(zz, 39.1805, -76.6685), "Towson": _ll(zz, 39.4015, -76.6019)}
+    return c
+
+
+def make_triangle_lodes():
+    z, la0, lo0, ax, ay = _load_lodes("triangle")
+    R, C = int(z["R"][()]), int(z["C"][()])
+    zz = (z, la0, lo0, ax, ay)
+    P = lambda pts: [_ll(zz, a, b) for a, b in pts]
+    prop = [(35.9969, -78.9026), (35.9480, -78.8770), (35.8970, -78.8630), (35.8240, -78.8280), (35.7870, -78.7780), (35.7867, -78.6720),
+            (35.7733, -78.6385), (35.7110, -78.6140), (35.6500, -78.4560)]
+    sline = [(35.7733, -78.6385), (35.8300, -78.6160), (35.9000, -78.5800), (35.9760, -78.5090)]
+    real = {"Proposed commuter rail (Durham-Garner-Clayton)": [P(prop)], "S-Line (Raleigh-Wake Forest)": [P(sline)]}
+    c = City("triangle_lodes", "Triangle (LODES 2022 + TIGER water; lines approximate)", R, C, 1.7, z["water"], z["H"], z["J"],
+             carless=np.full((R, C), .04), block=2, drive_kmh=50., circuity=1.25, park_base=5., park_max=6., cong=0.5, asc=-1.5,
+             transit_kmh=60., dwell=1.0, access_radius_km=6., walk_kmh=25., access_w=1.2, gamma_km=18., min_hop_km=1.6, max_hop_km=14.,
+             mid_budget=None, real=real, od=(z["src"], z["dst"], z["cnt"]),
+             desc="Triangle with observed LODES commute flows and TIGER lakes; transit alignments from memory.")
+    c.landmarks = {"Raleigh DT": _ll(zz, 35.7796, -78.6382), "RTP": _ll(zz, 35.8950, -78.8700), "Durham": _ll(zz, 35.9940, -78.8986),
+                   "Chapel Hill": _ll(zz, 35.9132, -79.0558), "Wake Forest": _ll(zz, 35.9799, -78.5097), "Cary": _ll(zz, 35.7915, -78.7811),
+                   "Garner": _ll(zz, 35.7113, -78.6142)}
+    return c
+
+
+CITY_MAKERS.update({"baltimore_lodes": make_baltimore_lodes, "triangle_lodes": make_triangle_lodes})
+BUDGET_NETS.update({"baltimore_lodes": BUDGET_NETS["baltimore"], "triangle_lodes": BUDGET_NETS["triangle"]})
 
 
 VARIANTS = {  # one-at-a-time perturbations used by the sensitivity sweep (v2)
