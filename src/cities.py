@@ -24,8 +24,8 @@ class City:
     def __init__(self, name, label, R, C, cell_km, water, H, J, carless=None, side=None,
                  block=2, drive_kmh=28., circuity=1.3, park_base=6., park_max=16., cong=1.2, side_pen=0.,
                  transit_kmh=40., dwell=0.5, walk_kmh=4.8, access_radius_km=1.2,
-                 access_w=1.5, wait_w=1.5, gamma_km=8., min_hop_km=0.9, max_hop_km=6.,
-                 max_lines=10, mid_budget=220., real=None, total_workers=200000, desc=""):
+                 access_w=1.2, wait_w=1.5, gamma_km=8., min_hop_km=0.9, max_hop_km=6.,
+                 max_lines=10, asc=ASC, mid_budget=220., real=None, total_workers=200000, desc=""):
         self.name, self.label, self.R, self.C, self.cell = name, label, R, C, cell_km
         self.water = water.astype(bool)
         self.H = np.where(self.water, 0, H)
@@ -39,6 +39,7 @@ class City:
         self.access_radius, self.access_w, self.wait_w = access_radius_km, access_w, wait_w
         self.gamma, self.min_hop, self.max_hop, self.max_lines = gamma_km, min_hop_km, max_hop_km, max_lines
         self.mid_budget = mid_budget
+        self.asc = asc
         self.real_xy = real or {}
         self.desc = desc
         s = total_workers / self.H.sum()
@@ -99,7 +100,7 @@ class City:
         self.drive_t = (self.park_base + self.park_max * g[None, :]
                         + 60 * self.circ * d / self.drive_kmh * (1 + self.cong * (g[:, None] + g[None, :]) / 2)
                         + self.side_pen * (self.zside[:, None] != self.zside[None, :]))
-        self.asc_z = ASC + 3.0 * self.zq
+        self.asc_z = self.asc + 3.0 * self.zq
         self.total_trips = self.flow.sum()
 
     # --- geometry helpers ---
@@ -226,7 +227,7 @@ def make_baltimore():
                               (13.8, 21.8), (14.8, 22.9), (15.8, 23.5), (16.5, 24.3), (17.3, 24.5), (18.4, 24.6),
                               (20.6, 24.1)]],
         "Light RailLink": [[(20.5, 2.5), (20.3, 6), (20, 8), (19, 10), (17, 12.5), (14.8, 14.8), (15.4, 16.4),
-                            (16.2, 17.8), (16.4, 21.2), (16.7, 22.4), (16.5, 23.3), (16.8, 25.5), (16.0, 30.2),
+                            (16.2, 17.8), (16.4, 21.2), (16.7, 22.4), (16.5, 24.3), (16.8, 25.5), (16.0, 30.2),
                             (15.2, 31.8), (13.0, 33.0), (11.5, 34.2), (9.5, 36)]],
         "Red Line (planned)": [[(4.5, 22.5), (6.6, 22.6), (9, 23), (11, 23.2), (12.8, 23.5), (14.6, 24), (16.8, 24.7),
                                 (18.8, 25.3), (20.8, 25.9), (22.6, 25.6), (23.8, 25.2), (25.2, 24.7), (27.8, 23.4)]],
@@ -253,8 +254,8 @@ def make_triangle():
         "S-Line (Raleigh-Wake Forest)": [[(38, 29), (39.5, 22), (41, 15), (42.5, 9), (43.5, 5.5)]],
     }
     return City("triangle", "Triangle (stylized)", R, C, cell, np.zeros((R, C), bool), H, J, carless=q, block=2,
-                drive_kmh=60., circuity=1.25, park_base=4., park_max=4., cong=0.3, transit_kmh=60., dwell=1.0, access_radius_km=5.,
-                walk_kmh=15., access_w=1.5, gamma_km=18., min_hop_km=1.6, max_hop_km=14., mid_budget=None,
+                drive_kmh=50., circuity=1.25, park_base=5., park_max=6., cong=0.5, asc=-1.5, transit_kmh=60., dwell=1.0, access_radius_km=6.,
+                walk_kmh=25., access_w=1.2, gamma_km=18., min_hop_km=1.6, max_hop_km=14., mid_budget=None,
                 real=real, total_workers=700000,
                 desc="Stylized Raleigh-Durham-Chapel Hill region; park-and-ride/feeder access (15 km/h, 5 km).")
 
@@ -265,7 +266,16 @@ CITY_ORDER = ["mono", "coastal", "river", "poly", "baltimore", "triangle"]
 _cache = {}
 
 
+BUDGET_NETS = {"baltimore": ["Metro SubwayLink", "Light RailLink", "Red Line (planned)"],
+               "triangle": ["Proposed commuter rail (Durham-Garner-Clayton)"]}
+
+
 def get_city(name):
     if name not in _cache:
-        _cache[name] = CITY_MAKERS[name]()
+        c = CITY_MAKERS[name]()
+        if c.mid_budget is None:       # real cities: mid budget = model cost of the real/proposed network
+            import model
+            rn = c.real_networks()
+            c.mid_budget = float(math.ceil(model.net_cost(c, [l for k in BUDGET_NETS[name] for l in rn[k]])))
+        _cache[name] = c
     return _cache[name]

@@ -75,8 +75,8 @@ def test_fitness_hand():
     hw = max(2.0, cyc / fleet)   # 1.4 -> 2.0
     ride = 9 + 1
     tr = 2 * hw / 2 + ride + 0   # wait weighted 2 * (hw/2)
-    # access: zone centroid at the cell center; offset sqrt(d^2+0.3^2) with d=0 -> 0.3 km
-    acc = 2.0 * 0.3 / 4.8 * 60
+    # access: zone centroid at the cell center; offset 0.25 km
+    acc = 2.0 * 0.25 / 4.8 * 60
     ct = tr + 2 * acc
     f = model.evaluate(c, [ln], 10., fleet)
     # drive time between cell 0 and cell 9 = 9 km /30 *60 = 18 min

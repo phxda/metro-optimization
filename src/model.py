@@ -139,7 +139,7 @@ def transfer_counts(P, pred, nid):
 def _access(city, lines, idx):
     pts = np.array([city.xy(*c) for c in idx])
     d = np.hypot(city.zx[:, None] - pts[None, :, 0], city.zy[:, None] - pts[None, :, 1])
-    off = 0.3 * city.block * city.cell
+    off = 0.25 * city.block * city.cell
     d = np.sqrt(d * d + off * off)
     P = d.shape[1]
     K = min(ACCESS_K, P)
