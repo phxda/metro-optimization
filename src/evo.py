@@ -2,7 +2,7 @@
 import math
 import numpy as np
 import model
-from cities import get_city
+from cities import get_city, get_variant_city
 
 MU, LAM = 16, 32
 
@@ -333,12 +333,13 @@ def freeze(net):
     return [Line(l.s, 0, len(l.s)) for l in net]
 
 
-def optimize(city_name, budget_factor, pen, mode, seed, gens=200):
-    city = get_city(city_name)
+def optimize(city_name, budget_factor, pen, mode, seed, gens=200, variant="base"):
+    city = get_variant_city(city_name, variant)
     budget = city.mid_budget * budget_factor
     rng = np.random.default_rng(seed * 1009 + 7)
     ev = Evolver(city, pen, rng)
-    full_fleet = model.fleet_for(budget)
+    fpu = city.fleet_per_unit
+    full_fleet = model.fleet_for(budget, fpu)
     if mode == "planned":
         net, f = ev.run([], budget, full_fleet, gens)
         phase_fit = [f]
@@ -346,7 +347,7 @@ def optimize(city_name, budget_factor, pen, mode, seed, gens=200):
         net, phase_fit = [], []
         for p in (1, 2, 3):
             cap = budget * p / 3
-            fl = model.fleet_for(cap)
+            fl = model.fleet_for(cap, fpu)
             base = freeze(net) if net else []
             net, f = ev.run(base, cap, fl, max(1, gens // 3))
             phase_fit.append(f)

@@ -25,7 +25,7 @@ class City:
                  block=2, drive_kmh=28., circuity=1.3, park_base=6., park_max=16., cong=1.2, side_pen=0.,
                  transit_kmh=40., dwell=0.5, walk_kmh=4.8, access_radius_km=1.2,
                  access_w=1.2, wait_w=1.5, gamma_km=8., min_hop_km=0.9, max_hop_km=6.,
-                 max_lines=10, asc=ASC, mid_budget=220., real=None, total_workers=200000, desc=""):
+                 max_lines=10, asc=ASC, beta=BETA, fleet_per_unit=FLEET_PER_UNIT, mid_budget=220., real=None, total_workers=200000, desc=""):
         self.name, self.label, self.R, self.C, self.cell = name, label, R, C, cell_km
         self.water = water.astype(bool)
         self.H = np.where(self.water, 0, H)
@@ -40,6 +40,7 @@ class City:
         self.gamma, self.min_hop, self.max_hop, self.max_lines = gamma_km, min_hop_km, max_hop_km, max_lines
         self.mid_budget = mid_budget
         self.asc = asc
+        self.beta, self.fleet_per_unit = beta, fleet_per_unit
         self.real_xy = real or {}
         self.desc = desc
         s = total_workers / self.H.sum()
@@ -279,3 +280,36 @@ def get_city(name):
             c.mid_budget = float(math.ceil(model.net_cost(c, [l for k in BUDGET_NETS[name] for l in rn[k]])))
         _cache[name] = c
     return _cache[name]
+
+
+VARIANTS = {  # one-at-a-time perturbations used by the sensitivity sweep (v2)
+    "base": {},
+    "drive_slow": {"drive_kmh_mult": 0.9}, "drive_fast": {"drive_kmh_mult": 1.1},
+    "asc_lo": {"asc_add": -0.5}, "asc_hi": {"asc_add": 0.5},
+    "beta_lo": {"beta": 0.10}, "beta_hi": {"beta": 0.22},
+    "fleet_lo": {"fleet_per_unit": 0.1}, "fleet_hi": {"fleet_per_unit": 0.4},
+}
+_vcache = {}
+
+
+def get_variant_city(name, variant="base"):
+    """City with perturbed behavioral parameters; budgets (mid_budget) stay those of the base city."""
+    if variant == "base":
+        return get_city(name)
+    k = (name, variant)
+    if k not in _vcache:
+        import copy
+        c = copy.deepcopy(get_city(name))
+        v = VARIANTS[variant]
+        if "drive_kmh_mult" in v:
+            c.drive_kmh *= v["drive_kmh_mult"]
+        if "asc_add" in v:
+            c.asc += v["asc_add"]
+        if "beta" in v:
+            c.beta = v["beta"]
+        if "fleet_per_unit" in v:
+            c.fleet_per_unit = v["fleet_per_unit"]
+        c._seg = get_city(name)._seg
+        c._prep_zones()
+        _vcache[k] = c
+    return _vcache[k]

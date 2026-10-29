@@ -22,8 +22,8 @@ def net_cost(city, lines):
     return COST_KM * km + COST_STATION * len(st) + COST_WATER_KM * water
 
 
-def fleet_for(budget):
-    return int(round(0.2 * budget))
+def fleet_for(budget, fpu=0.2):
+    return int(round(fpu * budget))
 
 
 def line_times(city, ln):
@@ -165,7 +165,7 @@ def evaluate(city, lines, pen, fleet, detail=False):
     Cm = (Bm[:, S] + W[None]).min(-1)                       # Z x Z
     fin = np.isfinite(Cm)
     dlt = np.where(fin, city.drive_t - Cm, 0.0)
-    u = BETA * dlt + city.asc_z[:, None]
+    u = city.beta * dlt + city.asc_z[:, None]
     p = np.where(fin, 1.0 / (1.0 + np.exp(-u)), 0.0)
     sav = city.flow * p * dlt
     fit = float(sav.sum() / 60.0)
