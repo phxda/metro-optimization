@@ -1,0 +1,668 @@
+{
+ "n": 120,
+ "validation": {
+  "baltimore_lodes": {
+   "gamma_fit": 13.0,
+   "mean_trip_km_obs": 11.338801166040756,
+   "mean_trip_km_gravity": 11.258181260643692,
+   "corr_flows": 0.947591627547701,
+   "corr_log": 0.9045545989367787,
+   "share_le5km_obs": 0.21565988668636643,
+   "share_le5km_gravity": 0.18247678201117837,
+   "share_ge20km_obs": 0.12040890608761452,
+   "share_ge20km_gravity": 0.0990741632108342,
+   "zones": 321,
+   "trips_per_day": 835204.0,
+   "real_fit_observed": 10754.583908206168,
+   "real_fit_gravity": 10493.680619498718,
+   "real_mode_share_observed": 0.07005650177521476
+  },
+  "triangle_lodes": {
+   "gamma_fit": 16.0,
+   "mean_trip_km_obs": 17.4370208456252,
+   "mean_trip_km_gravity": 17.341067714984263,
+   "corr_flows": 0.9443424400966208,
+   "corr_log": 0.9332403715936254,
+   "share_le5km_obs": 0.1235398544899795,
+   "share_le5km_gravity": 0.09714488770881881,
+   "share_ge20km_obs": 0.3595267332760962,
+   "share_ge20km_gravity": 0.3542503308614537,
+   "zones": 321,
+   "trips_per_day": 1169404.0,
+   "real_fit_observed": 4818.793968723155,
+   "real_fit_gravity": 4662.566751273361,
+   "real_mode_share_observed": 0.04582432223487731
+  }
+ },
+ "vs_real": {
+  "baltimore_lodes|lowpen|low": {
+   "real": 10754.583908206168,
+   "evolved_mean": 12233.65818416493,
+   "evolved_min": 11293.30629248022,
+   "evolved_max": 13660.255661818579,
+   "ratio": 1.1375296607086927,
+   "ratio_min": 1.0500923502826534,
+   "n": 5,
+   "mode_share": 0.05114833757076107
+  },
+  "baltimore_lodes|lowpen|mid": {
+   "real": 10754.583908206168,
+   "evolved_mean": 21549.179771510753,
+   "evolved_min": 15988.953591868281,
+   "evolved_max": 23686.866391047366,
+   "ratio": 2.003720455894894,
+   "ratio_min": 1.4867105718212013,
+   "n": 5,
+   "mode_share": 0.09021470605415596
+  },
+  "baltimore_lodes|lowpen|high": {
+   "real": 10754.583908206168,
+   "evolved_mean": 41168.339989148626,
+   "evolved_min": 36142.62602178299,
+   "evolved_max": 46465.28805055702,
+   "ratio": 3.82798073273068,
+   "ratio_min": 3.3606717219626465,
+   "n": 5,
+   "mode_share": 0.17895744463039015
+  },
+  "baltimore_lodes|highpen|low": {
+   "real": 9962.761348581143,
+   "evolved_mean": 12365.781762862256,
+   "evolved_min": 9048.151382165164,
+   "evolved_max": 13711.215207246054,
+   "ratio": 1.2412002385888066,
+   "ratio_min": 0.9081971418951801,
+   "n": 5,
+   "mode_share": 0.05295800550402404
+  },
+  "baltimore_lodes|highpen|mid": {
+   "real": 9962.761348581143,
+   "evolved_mean": 22247.92006959967,
+   "evolved_min": 21230.77503529481,
+   "evolved_max": 22735.11647624625,
+   "ratio": 2.2331077992516732,
+   "ratio_min": 2.1310131089628492,
+   "n": 5,
+   "mode_share": 0.09420969495374956
+  },
+  "baltimore_lodes|highpen|high": {
+   "real": 9962.761348581143,
+   "evolved_mean": 37225.00366148718,
+   "evolved_min": 33937.32098139595,
+   "evolved_max": 41749.36665505374,
+   "ratio": 3.7364142690006936,
+   "ratio_min": 3.4064171361717066,
+   "n": 5,
+   "mode_share": 0.1484253939030471
+  },
+  "triangle_lodes|lowpen|low": {
+   "real": 4818.793968723155,
+   "evolved_mean": 1902.4243261502056,
+   "evolved_min": 453.28577380578685,
+   "evolved_max": 4222.585379733334,
+   "ratio": 0.3947926262251662,
+   "ratio_min": 0.09406622834424583,
+   "n": 5,
+   "mode_share": 0.015742679688485667
+  },
+  "triangle_lodes|lowpen|mid": {
+   "real": 4818.793968723155,
+   "evolved_mean": 5853.574460504405,
+   "evolved_min": 4215.209522882503,
+   "evolved_max": 8328.296988579319,
+   "ratio": 1.2147384798971677,
+   "ratio_min": 0.8747436703543927,
+   "n": 5,
+   "mode_share": 0.043337011122106424
+  },
+  "triangle_lodes|lowpen|high": {
+   "real": 4818.793968723155,
+   "evolved_mean": 9228.576773286757,
+   "evolved_min": 5997.898798480019,
+   "evolved_max": 12256.340621546882,
+   "ratio": 1.9151216742582733,
+   "ratio_min": 1.244688782589577,
+   "n": 5,
+   "mode_share": 0.06323371133769444
+  },
+  "triangle_lodes|highpen|low": {
+   "real": 4818.793968723156,
+   "evolved_mean": 2429.918542240449,
+   "evolved_min": 453.2857738057875,
+   "evolved_max": 4222.585379733335,
+   "ratio": 0.504258650195893,
+   "ratio_min": 0.09406622834424595,
+   "n": 5,
+   "mode_share": 0.016363624769136356
+  },
+  "triangle_lodes|highpen|mid": {
+   "real": 4818.793968723156,
+   "evolved_mean": 6058.290655996765,
+   "evolved_min": 4215.209522882506,
+   "evolved_max": 8624.065183834191,
+   "ratio": 1.2572213494328004,
+   "ratio_min": 0.874743670354393,
+   "n": 5,
+   "mode_share": 0.04437894075141291
+  },
+  "triangle_lodes|highpen|high": {
+   "real": 4818.793968723156,
+   "evolved_mean": 9837.284615013477,
+   "evolved_min": 5997.898798480021,
+   "evolved_max": 12206.24716232405,
+   "ratio": 2.0414412151387498,
+   "ratio_min": 1.244688782589577,
+   "n": 5,
+   "mode_share": 0.062095495122304945
+  }
+ },
+ "real_components": {
+  "baltimore_lodes": {
+   "Metro SubwayLink": 4353.720945782198,
+   "Light RailLink": 5134.808719817462,
+   "Red Line (planned)": 2045.6009337053067,
+   "Metro+LRT": 9339.649761936902
+  },
+  "triangle_lodes": {
+   "Proposed commuter rail (Durham-Garner-Clayton)": 4818.793968723155,
+   "S-Line (Raleigh-Wake Forest)": 1246.0957810951918
+  }
+ },
+ "rescored_under_gravity": {
+  "baltimore_lodes": [
+   {
+    "observed": 15988.953591868281,
+    "gravity": 16892.375411171342
+   },
+   {
+    "observed": 22870.61426262103,
+    "gravity": 25346.9551054362
+   },
+   {
+    "observed": 23686.866391047366,
+    "gravity": 25272.159151564927
+   },
+   {
+    "observed": 23562.801809096414,
+    "gravity": 23595.650024926897
+   },
+   {
+    "observed": 21636.66280292066,
+    "gravity": 23170.031068208707
+   }
+  ],
+  "triangle_lodes": [
+   {
+    "observed": 7935.043253877837,
+    "gravity": 7086.348757727366
+   },
+   {
+    "observed": 4574.113014299863,
+    "gravity": 4130.441133986878
+   },
+   {
+    "observed": 4215.209522882503,
+    "gravity": 4790.359886304594
+   },
+   {
+    "observed": 4215.209522882503,
+    "gravity": 4790.359886304594
+   },
+   {
+    "observed": 8328.296988579319,
+    "gravity": 7521.301460206437
+   }
+  ]
+ },
+ "landmarks": {
+  "baltimore_lodes|low": {
+   "Downtown": [
+    0.8,
+    0.8,
+    0.8,
+    0.3,
+    0.8
+   ],
+   "Homewood/JHU": [
+    3.6,
+    3.6,
+    1.8,
+    3.2,
+    3.7
+   ],
+   "JHH/East Balt": [
+    0.4,
+    0.4,
+    0.4,
+    1.0,
+    0.4
+   ],
+   "West Balt": [
+    5.1,
+    1.3,
+    5.1,
+    6.6,
+    1.3
+   ],
+   "Owings Mills": [
+    1.9,
+    1.3,
+    13.9,
+    14.2,
+    1.3
+   ],
+   "Hunt Valley": [
+    3.3,
+    12.2,
+    0.7,
+    4.7,
+    12.2
+   ],
+   "BWI": [
+    12.6,
+    12.0,
+    2.0,
+    13.0,
+    12.0
+   ],
+   "Towson": [
+    0.8,
+    4.1,
+    0.8,
+    0.6,
+    11.5
+   ]
+  },
+  "baltimore_lodes|mid": {
+   "Downtown": [
+    0.8,
+    0.3,
+    0.3,
+    0.3,
+    0.8
+   ],
+   "Homewood/JHU": [
+    1.2,
+    2.0,
+    1.8,
+    2.4,
+    3.7
+   ],
+   "JHH/East Balt": [
+    1.0,
+    0.4,
+    0.4,
+    0.4,
+    0.4
+   ],
+   "West Balt": [
+    2.9,
+    6.6,
+    1.3,
+    1.7,
+    1.3
+   ],
+   "Owings Mills": [
+    1.4,
+    13.9,
+    13.5,
+    1.3,
+    1.4
+   ],
+   "Hunt Valley": [
+    12.0,
+    0.5,
+    0.5,
+    0.5,
+    11.6
+   ],
+   "BWI": [
+    10.0,
+    13.0,
+    11.3,
+    12.6,
+    10.0
+   ],
+   "Towson": [
+    8.0,
+    0.8,
+    0.6,
+    0.6,
+    11.3
+   ]
+  },
+  "baltimore_lodes|high": {
+   "Downtown": [
+    0.3,
+    0.8,
+    0.3,
+    0.8,
+    0.3
+   ],
+   "Homewood/JHU": [
+    1.2,
+    1.1,
+    2.0,
+    2.4,
+    1.8
+   ],
+   "JHH/East Balt": [
+    0.4,
+    0.4,
+    0.4,
+    0.4,
+    0.4
+   ],
+   "West Balt": [
+    2.9,
+    1.2,
+    1.4,
+    2.2,
+    1.3
+   ],
+   "Owings Mills": [
+    1.4,
+    0.5,
+    0.5,
+    0.6,
+    0.5
+   ],
+   "Hunt Valley": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "BWI": [
+    12.6,
+    2.2,
+    9.9,
+    3.1,
+    12.0
+   ],
+   "Towson": [
+    0.6,
+    0.6,
+    0.6,
+    0.6,
+    0.6
+   ]
+  },
+  "triangle_lodes|low": {
+   "Raleigh DT": [
+    0.6,
+    0.6,
+    36.5,
+    5.9,
+    16.0
+   ],
+   "RTP": [
+    14.4,
+    23.7,
+    13.2,
+    7.9,
+    0.6
+   ],
+   "Durham": [
+    25.7,
+    31.0,
+    3.8,
+    0.7,
+    2.1
+   ],
+   "Chapel Hill": [
+    24.8,
+    40.3,
+    0.7,
+    16.9,
+    15.5
+   ],
+   "Wake Forest": [
+    19.3,
+    19.3,
+    38.9,
+    19.3,
+    33.5
+   ],
+   "Cary": [
+    2.6,
+    12.9,
+    27.1,
+    12.2,
+    4.2
+   ],
+   "Garner": [
+    8.4,
+    2.2,
+    43.4,
+    13.2,
+    17.8
+   ]
+  },
+  "triangle_lodes|mid": {
+   "Raleigh DT": [
+    0.6,
+    17.2,
+    0.6,
+    0.6,
+    0.6
+   ],
+   "RTP": [
+    5.8,
+    2.1,
+    17.3,
+    17.3,
+    7.9
+   ],
+   "Durham": [
+    2.3,
+    1.1,
+    28.4,
+    28.4,
+    0.7
+   ],
+   "Chapel Hill": [
+    0.7,
+    14.2,
+    25.2,
+    25.2,
+    0.7
+   ],
+   "Wake Forest": [
+    20.2,
+    34.0,
+    0.6,
+    0.6,
+    20.2
+   ],
+   "Cary": [
+    11.0,
+    4.2,
+    5.0,
+    5.0,
+    12.2
+   ],
+   "Garner": [
+    8.2,
+    19.5,
+    8.4,
+    8.4,
+    7.0
+   ]
+  },
+  "triangle_lodes|high": {
+   "Raleigh DT": [
+    17.6,
+    0.6,
+    0.6,
+    0.6,
+    0.6
+   ],
+   "RTP": [
+    2.1,
+    4.2,
+    5.3,
+    5.8,
+    18.2
+   ],
+   "Durham": [
+    1.1,
+    2.3,
+    0.7,
+    1.1,
+    29.0
+   ],
+   "Chapel Hill": [
+    14.2,
+    0.7,
+    0.7,
+    0.7,
+    29.6
+   ],
+   "Wake Forest": [
+    34.0,
+    19.3,
+    20.2,
+    20.2,
+    0.6
+   ],
+   "Cary": [
+    6.4,
+    4.5,
+    11.0,
+    11.2,
+    5.0
+   ],
+   "Garner": [
+    14.0,
+    8.4,
+    3.2,
+    4.2,
+    8.4
+   ]
+  }
+ },
+ "pen_effect": {
+  "n_lines": {
+   "n": 60,
+   "mean": -0.016666666666666666,
+   "ci": [
+    -0.3333333333333333,
+    0.35
+   ]
+  },
+  "mean_stations_per_line": {
+   "n": 60,
+   "mean": 2.0193055555555555,
+   "ci": [
+    0.7853958333333331,
+    3.388263888888889
+   ]
+  },
+  "n_transfer_stations": {
+   "n": 60,
+   "mean": -0.25,
+   "ci": [
+    -0.6166666666666667,
+    0.1
+   ]
+  },
+  "rings": {
+   "n": 60,
+   "mean": -0.03333333333333333,
+   "ci": [
+    -0.2,
+    0.15
+   ]
+  },
+  "fitness_rel": {
+   "n": 60,
+   "mean": -0.8549084926267644,
+   "ci": [
+    -2.3151545278110506,
+    0.08648463062646865
+   ]
+  }
+ },
+ "phased_gap": {
+  "mean": 0.19043259808034962,
+  "median": 0.08415444062671684,
+  "frac_worse": 0.6666666666666666,
+  "ci": [
+   0.06735654286201458,
+   0.31209968273035626
+  ],
+  "by_city": {
+   "baltimore_lodes": 0.0169,
+   "triangle_lodes": 0.3639
+  },
+  "by_budget": {
+   "high": -0.107,
+   "low": 0.5198,
+   "mid": 0.1584
+  }
+ },
+ "table": [
+  {
+   "city": "baltimore_lodes",
+   "budget": "high",
+   "n_lines": 3.3,
+   "n_transfer_stations": 4.8,
+   "rings": 2.5,
+   "mode_share": 0.164,
+   "fitness": 39196.672,
+   "cost": 522.645
+  },
+  {
+   "city": "baltimore_lodes",
+   "budget": "low",
+   "n_lines": 1.1,
+   "n_transfer_stations": 0.1,
+   "rings": 0.0,
+   "mode_share": 0.052,
+   "fitness": 12299.72,
+   "cost": 131.681
+  },
+  {
+   "city": "baltimore_lodes",
+   "budget": "mid",
+   "n_lines": 2.0,
+   "n_transfer_stations": 1.9,
+   "rings": 0.6,
+   "mode_share": 0.092,
+   "fitness": 21898.55,
+   "cost": 263.265
+  },
+  {
+   "city": "triangle_lodes",
+   "budget": "high",
+   "n_lines": 1.1,
+   "n_transfer_stations": 0.2,
+   "rings": 0.0,
+   "mode_share": 0.063,
+   "fitness": 9532.931,
+   "cost": 234.858
+  },
+  {
+   "city": "triangle_lodes",
+   "budget": "low",
+   "n_lines": 1.0,
+   "n_transfer_stations": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.016,
+   "fitness": 2166.171,
+   "cost": 76.146
+  },
+  {
+   "city": "triangle_lodes",
+   "budget": "mid",
+   "n_lines": 1.0,
+   "n_transfer_stations": 0.0,
+   "rings": 0.0,
+   "mode_share": 0.044,
+   "fitness": 5955.933,
+   "cost": 157.284
+  }
+ ]
+}

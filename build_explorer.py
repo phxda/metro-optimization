@@ -7,14 +7,26 @@ import cities
 
 KEEP = ["fitness", "cost", "n_lines", "n_stations", "track_km", "mean_stations_per_line", "n_transfer_stations", "rings",
         "mode_share", "mean_headway", "mean_transfers_per_trip", "longest_share", "water_hops"]
+REAL_SETS = {"baltimore_lodes": ["Metro SubwayLink", "Light RailLink", "Red Line (planned)"], "triangle_lodes": ["Proposed commuter rail (Durham-Garner-Clayton)"]}
 runs = []
 for p in sorted(glob.glob(os.path.join(ROOT, "results", "runs", "*.json"))):
     r = json.load(open(p))
     runs.append(dict(city=r["city"], budget=r["budget"], pen=r["pen"], mode=r["mode"], seed=r["seed"], units=round(r["budget_units"], 1),
                      lines=r["lines"], m={k: round(r["metrics"][k], 4) for k in KEEP}, phase=[round(x) for x in r["phase_fit"]]))
+for p in sorted(glob.glob(os.path.join(ROOT, "results", "v2", "real", "*.json"))):   # v2: real-data cities (LODES + TIGER), 5 seeds
+    r = json.load(open(p))
+    runs.append(dict(city=r["city"], budget=r["budget"], pen=r["pen"], mode=r["mode"], seed=r["seed"], units=round(r["budget_units"], 1),
+                     lines=r["lines"], m={k: round(r["metrics"][k], 4) for k in KEEP}, phase=[round(x) for x in r["phase_fit"]]))
 real = json.load(open(os.path.join(ROOT, "results", "real_eval.json")))
+import model
+for n in ("baltimore_lodes", "triangle_lodes"):
+    c = cities.get_city(n); rn = c.real_networks(); real[n] = {}
+    sets = {"Metro + Light Rail + Red Line": REAL_SETS[n]} if n == "baltimore_lodes" else {"Proposed commuter rail": REAL_SETS[n]}
+    for lab, ks in sets.items():
+        L = [l for k in ks for l in rn[k]]
+        real[n][lab + "|lowpen"] = dict(label=lab, pen="lowpen", lines=L, metrics=dict(fitness=model.evaluate(c, L, 5., model.fleet_for(c.mid_budget))))
 cityd = {}
-for n in cities.CITY_ORDER:
+for n in cities.CITY_ORDER + ["baltimore_lodes", "triangle_lodes"]:
     c = cities.get_city(n)
     dens = np.log1p((c.H + c.J) / c.cell ** 2)
     q = np.clip((dens / dens.max() * 9).round(), 0, 9).astype(int)
@@ -42,7 +54,7 @@ table{border-collapse:collapse;font-size:11px;width:100%}td{padding:1px 3px;bord
 h2{font-size:14px;margin:6px 0 4px}.note{font-size:11px;color:var(--mut)}
 </style></head><body>
 <h1>Subway network explorer</h1>
-<div class="sub">End-state evolved networks. Pick a condition (A) and optionally a second one (B) to compare across the 3 seeds. Real-city geography is a stylized approximation. White dots: transfer stations. Fitness = person-hours/day of generalized time saved vs driving.</div>
+<div class="sub">End-state evolved networks. Pick a condition (A) and optionally a second one (B) to compare across seeds (3 for the original cities; 5 for the two real-data cities, which use observed LODES commute flows and TIGER water). Real-city geography is a stylized approximation. White dots: transfer stations. Fitness = person-hours/day of generalized time saved vs driving.</div>
 <div class="ctl" id="ctlA"></div>
 <h2>Condition A</h2><div class="row" id="rowA"></div>
 <div class="ctl" id="ctlB"></div>
@@ -79,8 +91,8 @@ function find(o,seed){return D.runs.find(r=>r.city==o.c.value&&r.budget==o.b.val
 function render(o,rowId){
  const row=document.getElementById(rowId);row.innerHTML='';const city=D.cities[o.c.value];
  const real=o.r.value!='none'?city.real[o.r.value]:null;
- [0,1,2].forEach(sd=>{const r=find(o,sd);const card=document.createElement('div');card.className='card';
-  if(!r){card.textContent='no run';row.appendChild(card);return}
+ [0,1,2,3,4].forEach(sd=>{const r=find(o,sd);const card=document.createElement('div');card.className='card';
+  if(!r){if(sd<3){card.textContent='no run';row.appendChild(card)}return}
   const cv=document.createElement('canvas');card.appendChild(cv);draw(cv,city,r.lines,real);
   const t=document.createElement('table');const m=r.m;
   const rows=[['seed',sd],['fitness (person-h/day)',Math.round(m.fitness)],['cost / budget',m.cost.toFixed(0)+' / '+r.units],['lines',m.n_lines],['stations',m.n_stations],['track km',m.track_km.toFixed(1)],

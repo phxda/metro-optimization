@@ -26,3 +26,11 @@ A second inspection of the final grid (shape x budget) and of the Baltimore, Tri
 0 violations: every network is within its budget, has all stations on land, no duplicate stations, all hops within the min/max hop length, and a feasible fleet. Warnings (not errors): 105 runs are single-line networks (low budgets, and the Triangle at all budgets) and 8 have one line holding >80% of track. These are findings, not bugs: at the low budget the fixed fleet and the layover overhead favor one line.
 
 Not tested: optimality (the optimizer is a heuristic; seed-to-seed coefficient of variation of planned fitness is 5% median and 24% max), and no calibration against observed ridership.
+
+## v2 additions
+- **Regression test.** After adding the variant machinery, the base setting reproduces a v1 run exactly (same stations, same fitness for `mono`, low budget, seed 0), and all 9 unit and invariant tests still pass.
+- **Real-data inputs.** Built with `build_realdata.py` (run with `python3 -I`, raw files treated as data only). Checks: grid worker totals are plausible (431,518 Baltimore, 605,516 Triangle), TIGER water appears where expected (Patapsco and the Bay; Falls and Jordan lakes), and cells with real jobs or residents are never marked water. Rendered both cities with the approximate alignments and landmarks and inspected them.
+- **Demand-model check.** Gravity flows (decay fitted to mean trip length) correlate with observed LODES flows at r = 0.94 to 0.95, and the real networks score within 2.5% under either (`analysis3.py`).
+- **ACS check.** Modeled vs observed transit commute share by zone (`acs_validation.py`); results in `results/acs_validation.json`. Baltimore agrees on level (7.0% vs 6.4%), the Triangle does not (4.6% vs 1.3%).
+- **Explorer.** Loaded in headless Chromium: no script errors, 5 seed cards render for a real-data city.
+- **Audit.** `tests/check_runs.py` covers `results/runs/` only; v2 runs were produced by the same constrained optimizer and use the same cost and hop checks inside it, but were not separately audited.

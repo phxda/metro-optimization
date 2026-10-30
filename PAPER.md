@@ -106,10 +106,70 @@ All parameters were set by hand and several were adjusted after smoke tests so t
 
 Tally of the 22 rows: 8 supported, 6 partly supported, 7 not supported, 1 non-replicating. Several predictions had round-number thresholds that missed by small margins (P4c, P5c, P1d), which the table shows explicitly.
 
+## 7. Addendum (v2): robustness, convergence, and real data
+
+Sections 1 to 6 are the original analysis and are unchanged, including the prediction scoring. This addendum used extra compute to attack the limitations in Section 5. New code: `run_sweep2.py`, `analysis2.py`, `analysis3.py`, `build_realdata.py`, `acs_validation.py`. New data: `results/v2/`, `results/stats_v2.json`, `results/stats_real.json`, `results/structure_posthoc.csv`.
+
+### 7.1 More seeds, longer runs
+
+Seeds 3 to 9 were added for every condition (10 seeds, 720 runs in the base design). Headline effects are stable: a high transfer penalty gives 28% fewer lines (ratio 0.72), 39% more stations per line and 24% fewer transfer stations; the fitness cost of the penalty shrinks to 1.3%. The phased shortfall is 9.3% on average (6.7% median), phased is worse in 79% of pairs, and it is 15.4%, 8.0% and 4.3% at low, mid and high budget, so the reversed budget trend (P3b) holds. The polycentric-minus-monocentric gap difference is -0.4 points, so P3d is a clear null. Against the stylized real systems, the evolved network at the real budget scores 1.49x (low penalty) and 1.68x (high penalty) the Baltimore system (worst of 10 seeds 1.27x and 1.54x), and 2.16x the proposed Triangle rail (worst seed 2.11x).
+
+Convergence: re-running the 54 low-penalty planned conditions at 1,500 generations (3 seeds) improved fitness over the 500-generation result in 74% of runs, by 4.7% on average (median 2.3%, worst case +29%, largest in Baltimore at +8%, smallest in the Triangle at +0.5%). Seed CV falls from 5.0% to 4.1%. So the 500-generation optimizer is within about 5% of what it finds with 3x the effort, but is not converged; planned fitness is slightly understated, and phased-versus-planned gaps below about 5% remain unresolved.
+
+### 7.2 Sensitivity to behavioral parameters
+
+Eight one-at-a-time perturbations were each run across all 6 cities x 3 budgets x 2 penalties x 2 build modes x 2 seeds (1,152 runs): driving speed -10% / +10%; transit constant -0.5 / +0.5; logit slope 0.10 / 0.22; fleet 0.1 / 0.4 vehicles per budget unit.
+
+| Variant | Lines ratio (high/low pen) | Stations/line ratio | Phased gap, mean (low / high budget) | Baltimore: evolved / real | Triangle: evolved / proposed | Triangle mid mode share |
+|---|---|---|---|---|---|---|
+| base (seeds 0-1) | 0.70 | 1.42 | 9.9% (17.1 / 4.6) | 1.45 | 2.13 | 7.5% |
+| drive -10% | 0.74 | 1.38 | 6.1% (10.7 / 7.2) | 1.39 | 1.26 | 10.1% |
+| drive +10% | 0.71 | 1.43 | 10.8% (16.3 / 2.7) | 2.03 | 5.94 | 4.6% |
+| transit constant -0.5 | 0.78 | 1.26 | 7.9% (12.7 / 6.5) | 1.39 | 2.21 | 5.6% |
+| transit constant +0.5 | 0.73 | 1.38 | 10.2% (16.4 / 5.7) | 1.47 | 2.16 | 9.8% |
+| slope 0.10 | 0.70 | 1.36 | 13.3% (25.2 / 7.6) | 1.83 | 2.87 | 6.4% |
+| slope 0.22 | 0.74 | 1.32 | 8.5% (13.6 / 6.5) | 1.54 | 1.90 | 8.3% |
+| fleet 0.1 | 0.75 | 1.29 | 16.7% (30.1 / 7.0) | 1.64 | 5.10 | 4.6% |
+| fleet 0.4 | 0.71 | 1.44 | 3.5% (8.4 / 1.9) | 1.46 | 1.83 | 8.8% |
+
+What survives all nine settings: fewer and longer lines under a high penalty (lines ratio 0.70 to 0.78, stations per line 1.26 to 1.44; transfer stations fall in every setting but by 8% to 67%); phased worse than planned on average (3.5% to 16.7%) and worse at low than at high budget (all nine settings); the evolved network beating the stylized Baltimore system (1.39x to 2.03x) and the proposed Triangle rail (1.26x to 5.94x). What does not survive: the polycentric-versus-monocentric gap difference changes sign across settings (-6.6 to +11.8 points), and the Triangle's absolute level. The proposed Triangle rail's own fitness runs from 920 (driving +10%) to 15,372 (driving -10%), and mode share at the mid budget from 4.6% to 10.1%. The fitness-change-under-penalty column is omitted because a relative change is unstable where baseline fitness is near zero (the logit slope 0.10 and driving +10% settings).
+
+### 7.3 Real data: observed commute flows, real water, and an ACS check
+
+Using the allowed Census hosts we downloaded LEHD LODES 2022 origin-destination commute flows and block centroids for Maryland and North Carolina, and TIGER 2022 area water. For two new cities, `baltimore_lodes` and `triangle_lodes`, grids are anchored on real latitude and longitude (Baltimore: 38x36 cells of 1 km; Triangle: 36x36 cells of 1.7 km). Observed worker flows between zones replace the gravity model (431,518 workers in Baltimore pairs and 605,516 in the Triangle, only flows with both ends inside the grid); water is rasterized from TIGER polygons larger than 0.3 km2. Transit alignments (Metro, Light RailLink, Red Line; proposed commuter rail, S-Line) are still approximate station coordinates written from memory, now in latitude and longitude, so they remain approximate. All behavioral parameters are unchanged from Sections 2 and 3, with no re-tuning. The sweep is 2 cities x 3 budgets x 2 penalties x 2 modes x 5 seeds = 120 runs.
+
+**The gravity model is adequate for what we use it for.** With the decay parameter fitted to the observed mean trip length, gravity flows correlate with the observed flows at r = 0.95 (Baltimore) and 0.94 (Triangle) at the zone-pair level, and match the mean trip length (11.3 km, 17.4 km) by construction. It underpredicts short trips (share of trips under 5 km: 21.6% observed vs 18.2% in Baltimore). The real networks score within 2.5% of each other under the two demand models (10,755 vs 10,494 Baltimore; 4,819 vs 4,663 Triangle), and the evolved networks rescored under gravity demand change by under 11%.
+
+**ACS check on the mode-choice calibration.** Modeled transit share for the real Baltimore network is 7.0% of in-grid trips, against 6.4% ACS transit commute share (which includes buses). The zone-level correlation between modeled and ACS origin shares is r = 0.44 (242 zones; Spearman 0.39). For the Triangle the model gives 4.6% for the proposed rail against 1.3% ACS, which is bus-only because there is no rail, with r = 0.20. So the Baltimore calibration is plausible and the Triangle is probably too favorable to transit by a factor of a few; read the Triangle as an upper bound on rail's draw. The ACS comparison was done with the Census API (key kept in a git-ignored local file).
+
+**Evolved vs real, with real data.**
+
+| | Real/proposed network fitness | Evolved at 0.5x / 1x / 2x budget (mean of 5 seeds, low penalty) | Ratio at 1x (worst seed) | Mode share at 1x |
+|---|---|---|---|---|
+| Baltimore (real data) | 10,755 (Metro + Light Rail + Red Line); Metro + LRT alone 9,340 | 12,234 / 21,549 / 41,168 | 2.00 (1.49) | 9.0% |
+| Triangle (real data) | 4,819 (proposed commuter rail) | 1,902 / 5,854 / 9,229 | 1.21 (0.87) | 4.3% |
+
+Baltimore's margin is larger in real data (2.0x vs 1.45x to 1.49x stylized). The Triangle's is much smaller (1.21x vs 2.1x), and in one of five seeds the optimizer does not beat the proposed alignment at its own budget. Real-data Triangle optima are also erratic: the best 1-line network at the low budget ranges 453 to 4,223 across seeds, because with one line the search can settle on very different corridors (Durham to Chapel Hill vs Raleigh to Wake Forest vs Durham to Raleigh). So the stylized Triangle overstated the advantage of optimization; with real flows the proposed corridor is closer to what the optimizer finds. In real data the Triangle at the high budget has a mode share of 6.3% (the original P5c prediction, under 8%, holds here), and per in-grid worker the Triangle saves 5.2 times less than Baltimore at the mid budget (0.0098 vs 0.0508 h/day; P5d predicted at least 5x, so it holds with real flows).
+
+Structure with real flows: Baltimore evolved networks serve downtown (within 0.8 km) and Johns Hopkins Hospital (within 1.0 km) in every mid-budget seed, Homewood within 1.5 km in 1 of 5 mid-budget seeds and 2.4 km or closer in 4 of 5, and the Red Line component is worth 15% over Metro + Light Rail (below the 25% in P4c). Owings Mills is served within 1.4 km in 2 of 5 and Hunt Valley within 0.5 km in 3 of 5 mid-budget seeds; at the high budget both are served in 5 of 5. The penalty effect is weaker (stations per line +2.0, CI +0.8 to +3.4; lines and transfer stations indistinguishable from zero with only 5 seeds, mostly because the real-data networks have fewer lines). The phased shortfall is 1.7% for Baltimore and 36% for the Triangle, driven by the erratic Triangle low-budget runs (52% at the low budget, -11% at the high), so the Triangle phased result does not replicate.
+
+### 7.4 Post-hoc structure and the core-and-branch comparison
+
+On all 360 planned base networks (10 seeds), we recounted rings as independent cycles enclosing at least 6 km2, which removes the overlap artifact of the original cycle count. True rings are nearly absent below the high budget (0 to 0.5 per network) and average 1.0 (monocentric), 1.05 (river-split), 2.55 (coastal), 2.3 (polycentric) and 1.05 (Baltimore) at the high budget; the original 3 to 6 cycles per network at the high budget overstated rings (the coastal city's P1c "at most one cycle" is therefore closer to true at mid, and still false at the high budget). For networks with at least one hub station (a transfer station or a station of degree 3 or more), we defined the core as the hubs plus the shortest paths between them and branches as the connected pieces left over. Cores hold 6% to 35% of stations, branches average 4 to 8 stations, and in every one of these networks the branch tips are farther from the core's centroid than the core's own stations. That is the qualitative shape described for real systems by Roth et al. (2012): a compact core with branches outward. We did not compare with their statistics, and our definition differs from theirs, so this is a consistency check on shape only.
+
+### 7.5 What changed in the conclusions
+
+- Strengthened: the transfer-penalty effect, the phased shortfall and its reversed budget trend, and the finding that the optimizer beats the stylized real systems at the real budget. These hold across 10 seeds, nine parameter settings and, for Baltimore, real flows.
+- Weakened: the Triangle result in Section 4.5. The advantage over the proposed rail depends on the driving-speed and mode-choice assumptions and shrinks from 2.1x to 1.2x with real flows, and the model overstates Triangle transit share against ACS.
+- Not replicating: the effect of city shape on the phased gap (P3d), and the Triangle phased results.
+- Original prediction scores (Section 6) are left as they were. With real data, P5c and P5d would score as supported and P4c remains not supported; this is reported here only, not as a change to the table.
+- Still limited: transit alignments are from memory; the ACS check validates only one aggregate; the optimizer is not converged (about 5% under longer runs); there are no real station-level boardings to test against.
+
+
 ## References
 
 Roth, C., Kang, S. M., Batty, M., and Barthelemy, M. (2012). A long-time limit for world subway networks. *Journal of the Royal Society Interface*, 9(75), 2540-2550. Cited only as an external comparison on core-and-branch structure; we did not test whether our evolved networks match their statistics.
 
 ## Files
 
-`PREDICTIONS.md`, `TESTS.md`, `results.csv` (one row per run), `results/stats.json`, `results/real_eval.json` (comparison networks), `figures/`, `explorer.html` (self-contained viewer), `src/`, `run_sweep.py`, `run_real.py`, `analysis.py`, `build_explorer.py`.
+`PREDICTIONS.md`, `TESTS.md`, `results.csv` (one row per run), `results/stats.json`, `results/real_eval.json` (comparison networks), `figures/`, `explorer.html` (self-contained viewer; now includes the two real-data cities), `src/`, `run_sweep.py`, `run_real.py`, `analysis.py`, `build_explorer.py`.
